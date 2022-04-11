@@ -22,12 +22,31 @@
     </svg>-->
     </div>
 
+            <form class="align-self-center">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <!--<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>-->
+    </form>
+
 
 
     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-      <!--<li class="nav-item">
+      <li class="nav-item">
         <a class="nav-link active text-light fw-bold border border-light rounded m-1" aria-current="page" href="<?php echo site_url('news/index'); ?>">Explore</a>
-      </li>-->
+      </li>
+      <?php 
+      if(isset($_SESSION['logged_in'])){
+        $add_log = site_url('news/create');
+        echo '<li class="nav-item"><a class="nav-link active text-light fw-bold border border-light rounded m-1" aria-current="page" href="'.$add_log.'">List your space</a></li>';
+      }
+      ?>
+
+      <?php 
+      if(isset($_SESSION['logged_in'])){
+        $name_profile = ucfirst($this->session->userdata['logged_in']['username']);
+        $add_log = site_url('user_authentication/profile');
+        echo ' <li class="nav-item"><a class="nav-link active text-light fw-bold border border-light rounded m-1" aria-current="page" href="'.$add_log.'">Profile <span class = "text-danger">'.$name_profile.'</span></a></li>';
+      }
+      ?>
 
       <?php 
       if(!isset($_SESSION['logged_in'])){
