@@ -1,5 +1,5 @@
 	<?php
-	class News extends CI_Controller {
+	class Walmart extends CI_Controller {
 
 
 	        public function __construct()
@@ -40,7 +40,7 @@
 		                /*$data["title"] = "News";*/
 		                $this->load->view('templates/header', $data);
 		                /*var_dump($data["news"]);*/
-		                $this->load->view('space/index', $data);
+		                $this->load->view('products/index', $data);
 		                $this->load->view('templates/footer');
 
 				    }
@@ -134,7 +134,7 @@
 		                /*var_dump($data["news_item"]);*/
 		                $this->load->view('templates/header', $data);
 		                /*var_dump($data["news"]);*/
-		                $this->load->view('space/index', $data);
+		                $this->load->view('products/index', $data);
 		                $this->load->view('templates/footer');
 				    }
 
@@ -159,7 +159,7 @@
 	                /*var_dump($data["news_item"]);*/
 	                $this->load->view('templates/header', $data);
 	                /*var_dump($data["news"]);*/
-	                $this->load->view('space/view', $data);
+	                $this->load->view('products/view', $data);
 	                $this->load->view('templates/footer');
 	        }
 
@@ -182,7 +182,7 @@
 			    if ($this->form_validation->run() === FALSE)
 			    {
 			        $this->load->view('templates/header', $data);
-			        $this->load->view('space/view');
+			        $this->load->view('products/view');
 			        $this->load->view('templates/footer');
 
 			    }
@@ -197,7 +197,7 @@
 	                /*var_dump($data["news_item"]);*/
 	                $this->load->view('templates/header', $data);
 	                /*var_dump($data["news"]);*/
-	                $this->load->view('space/view', $data);
+	                $this->load->view('products/view', $data);
 	                $this->load->view('templates/footer');
 			    }
 
@@ -225,7 +225,7 @@
 			    if ($this->form_validation->run() === TRUE)
 			    {
 			        $this->load->view('templates/header', $data);
-			        $this->load->view('space/view');
+			        $this->load->view('products/view');
 			        $this->load->view('templates/footer');
 
 			    }
@@ -242,7 +242,7 @@
 	                /*var_dump($data["news_item"]);*/
 	                $this->load->view('templates/header', $data);
 	                /*var_dump($data["news"]);*/
-	                $this->load->view('space/view', $data);
+	                $this->load->view('products/view', $data);
 	                $this->load->view('templates/footer');
 			    }
 
@@ -260,7 +260,7 @@
 	                /*var_dump($data["news_item"]);*/
 	                $this->load->view('templates/header', $data);
 	                /*var_dump($data["news"]);*/
-	                $this->load->view('space/view', $data);
+	                $this->load->view('products/view', $data);
 	                $this->load->view('templates/footer');
 	        }
 
@@ -292,7 +292,7 @@
 			    if ($this->form_validation->run() === FALSE)
 			    {
 			        $this->load->view('templates/header');
-			        $this->load->view('space/create');
+			        $this->load->view('products/create');
 			        $this->load->view('templates/footer');
 
 			    }
@@ -328,11 +328,11 @@
 				                /*var_dump($data["news_item"]);*/
 				                $this->load->view('templates/header', $data);
 				                /*var_dump($data["news"]);*/
-				                $this->load->view('space/view', $data);
+				                $this->load->view('products/view', $data);
 				                $this->load->view('templates/footer');
 		                    } else {
 		                    	$this->load->view('templates/header');
-						        $this->load->view('space/create', $data);
+						        $this->load->view('products/create', $data);
 						        $this->load->view('templates/footer');
 		                    }
 
@@ -524,7 +524,7 @@
 	                /*var_dump($data["news_item"]);*/
 	                $this->load->view('templates/header', $data);
 	                /*var_dump($data["news"]);*/
-	                $this->load->view('space/view', $data);
+	                $this->load->view('products/view', $data);
 	                $this->load->view('templates/footer');
 	        }
 

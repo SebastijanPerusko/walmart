@@ -85,11 +85,10 @@ class News_model extends CI_Model {
 
 
 			$query = $this->db->select('*')
-	        				->from('oglas')
-	        				->join('lastnost', 'oglas.id = lastnost.id_o')
-	        				->join("($subquery) O", "O.id_o = oglas.id", 'left');
+	        				->from('izdelek')
+	        				->join("($subquery) O", "O.id_o = izdelek.id", 'left');
 
-	        if(isset($_SESSION['point_value']) && $_SESSION['point_value'] == 'veichle'){
+	        /*if(isset($_SESSION['point_value']) && $_SESSION['point_value'] == 'veichle'){
 	        	$where_q = "oglas.lokacija = 'cover' OR oglas.lokacija = 'uncover'";
 	        	$query = $this->db->where($where_q);
 	        } else if(isset($_SESSION['point_value']) && $_SESSION['point_value'] == 'object'){
@@ -116,41 +115,41 @@ class News_model extends CI_Model {
 
 			if(isset($_SESSION['city_post']) && $_SESSION['city_post'] != ''){
 				$query = $this->db->where('UPPER(oglas.mesto)', strtoupper($_SESSION['city_post']));
-			}
-			if(isset($_SESSION['price_from']) && !empty($_SESSION['price_from'])){
-				$query = $this->db->where('oglas.cena >=', intval($_SESSION['price_from']));
+			}*/
+						if(isset($_SESSION['price_from']) && !empty($_SESSION['price_from'])){
+				$query = $this->db->where('izdelek.cena >=', intval($_SESSION['price_from']));
 			}
 			if(isset($_SESSION['price_end']) && !empty($_SESSION['price_end'])){
-				$query = $this->db->where('oglas.cena <=', intval($_SESSION['price_end']));
+				$query = $this->db->where('izdelek.cena <=', intval($_SESSION['price_end']));
 			}
 
 
 			if(isset($_SESSION['climate_controlled']) && $_SESSION['climate_controlled'] == '1'){
-				$query = $this->db->where('lastnost.climate_controlled', 1);
+				$query = $this->db->where("izdelek.vrsta = 'fruit_veg'");
 			}
 			if(isset($_SESSION['smoke_free']) && $_SESSION['smoke_free'] == '1'){
-				$query = $this->db->where('lastnost.smoke_free', 1);
+				$query = $this->db->where("izdelek.vrsta = 'refrig_Milk'");
 			}
 			if(isset($_SESSION['smoke_detectors']) && $_SESSION['smoke_detectors'] == '1'){
-				$query = $this->db->where('lastnost.smoke_detectors', 1);
+				$query = $this->db->where("izdelek.vrsta = 'meat_fish'");
 			}
 			if(isset($_SESSION['private_entrance']) && $_SESSION['private_entrance'] == '1'){
-				$query = $this->db->where('lastnost.private_entrance', 1);
+				$query = $this->db->where("izdelek.vrsta = 'drink'");
 			}
 			if(isset($_SESSION['private_space']) && $_SESSION['private_space'] == '1'){
-				$query = $this->db->where('lastnost.private_space', 1);
+				$query = $this->db->where("izdelek.vrsta = 'bread_sweet'");
 			}
 			if(isset($_SESSION['locked_area']) && $_SESSION['locked_area'] == '1'){
-				$query = $this->db->where('lastnost.locked_area', 1);
+				$query = $this->db->where("izdelek.vrsta = 'frozen'");
 			}
 			if(isset($_SESSION['pet_free']) && $_SESSION['pet_free'] == '1'){
-				$query = $this->db->where('lastnost.pet_free', 1);
+				$query = $this->db->where("izdelek.vrsta = 'animals'");
 			}
 			if(isset($_SESSION['security_camera']) && $_SESSION['security_camera'] == '1'){
-				$query = $this->db->where('lastnost.security_camera', 1);
+				$query = $this->db->where("izdelek.vrsta = 'hygiene'");
 			}
 			if(isset($_SESSION['no_strairs']) && $_SESSION['no_strairs'] == '1'){
-				$query = $this->db->where('lastnost.no_stairs', 1);
+				$query = $this->db->where("izdelek.vrsta = 'cleaning'");
 			}
 
 
@@ -193,14 +192,12 @@ class News_model extends CI_Model {
 	        {
 	        	if($num == NULL){
 	                $query = $this->db->select('*')
-	        				->from('oglas')
-	        				->join('lastnost', 'oglas.id = lastnost.id_o')
+	        				->from('izdelek')
 	        				->get();
 	                return $query->result_array();
 	            } else {
 	            	$query = $this->db->select('*')
-	        				->from('oglas')
-	        				->join('lastnost', 'oglas.id = lastnost.id_o');
+	        				->from('izdelek');
 
 	        		$query = $this->db->limit(12*($num),12*($num-1));
 	        		$query = $this->db->get();
@@ -211,11 +208,9 @@ class News_model extends CI_Model {
 
 	        /*$query = $this->db->get_where('oglas', array('id' => $slug));*/
 	        $query = $this->db->select('*')
-	        				->select('oglas.id AS "id_space"')
-	        				->select('lastnost.id AS "id_pro"')
-	        				->from('oglas')
-	        				->join('lastnost', 'oglas.id = lastnost.id_o')
-	        				->where('oglas.id', $slug)
+	        				->select('izdelek.id AS "id_space"')
+	        				->from('izdelek')
+	        				->where('izdelek.id', $slug)
 	        				->get();
 	        return $query->row_array();
         }
@@ -276,13 +271,12 @@ class News_model extends CI_Model {
 
 
 			$query = $this->db->select('*')
-							->select('oglas.id AS "id_ad_space"')
-	        				->from('oglas')
-	        				->join('lastnost', 'oglas.id = lastnost.id_o')
-	        				->join("($subquery) O", "O.id_o = oglas.id", 'left');
+							->select('izdelek.id AS "id_ad_product"')
+	        				->from('izdelek')
+	        				->join("($subquery) O", "O.id_o = izdelek.id", 'left');
 
-	        if(isset($_SESSION['point_value']) && $_SESSION['point_value'] == 'veichle'){
-	        	$where_q = "oglas.lokacija = 'cover' OR oglas.lokacija = 'uncover'";
+	        /*if(isset($_SESSION['point_value']) && $_SESSION['point_value'] == 'veichle'){
+	        	$where_q = "izdelek.vrsta = 'fruit_veg'";
 	        	$query = $this->db->where($where_q);
 	        } else if(isset($_SESSION['point_value']) && $_SESSION['point_value'] == 'object'){
 	        	$where_q_2 = "oglas.lokacija = 'indoor' OR oglas.lokacija = 'none'";
@@ -308,41 +302,41 @@ class News_model extends CI_Model {
 
 			if(isset($_SESSION['city_post']) && $_SESSION['city_post'] != ''){
 				$query = $this->db->where('UPPER(oglas.mesto)', strtoupper($_SESSION['city_post']));
-			}
+			}*/
 			if(isset($_SESSION['price_from']) && !empty($_SESSION['price_from'])){
-				$query = $this->db->where('oglas.cena >=', intval($_SESSION['price_from']));
+				$query = $this->db->where('izdelek.cena >=', intval($_SESSION['price_from']));
 			}
 			if(isset($_SESSION['price_end']) && !empty($_SESSION['price_end'])){
-				$query = $this->db->where('oglas.cena <=', intval($_SESSION['price_end']));
+				$query = $this->db->where('izdelek.cena <=', intval($_SESSION['price_end']));
 			}
 
 
 			if(isset($_SESSION['climate_controlled']) && $_SESSION['climate_controlled'] == '1'){
-				$query = $this->db->where('lastnost.climate_controlled', 1);
+				$query = $this->db->where("izdelek.vrsta = 'fruit_veg'");
 			}
 			if(isset($_SESSION['smoke_free']) && $_SESSION['smoke_free'] == '1'){
-				$query = $this->db->where('lastnost.smoke_free', 1);
+				$query = $this->db->where("izdelek.vrsta = 'refrig_Milk'");
 			}
 			if(isset($_SESSION['smoke_detectors']) && $_SESSION['smoke_detectors'] == '1'){
-				$query = $this->db->where('lastnost.smoke_detectors', 1);
+				$query = $this->db->where("izdelek.vrsta = 'meat_fish'");
 			}
 			if(isset($_SESSION['private_entrance']) && $_SESSION['private_entrance'] == '1'){
-				$query = $this->db->where('lastnost.private_entrance', 1);
+				$query = $this->db->where("izdelek.vrsta = 'drink'");
 			}
 			if(isset($_SESSION['private_space']) && $_SESSION['private_space'] == '1'){
-				$query = $this->db->where('lastnost.private_space', 1);
+				$query = $this->db->where("izdelek.vrsta = 'bread_sweet'");
 			}
 			if(isset($_SESSION['locked_area']) && $_SESSION['locked_area'] == '1'){
-				$query = $this->db->where('lastnost.locked_area', 1);
+				$query = $this->db->where("izdelek.vrsta = 'frozen'");
 			}
 			if(isset($_SESSION['pet_free']) && $_SESSION['pet_free'] == '1'){
-				$query = $this->db->where('lastnost.pet_free', 1);
+				$query = $this->db->where("izdelek.vrsta = 'animals'");
 			}
 			if(isset($_SESSION['security_camera']) && $_SESSION['security_camera'] == '1'){
-				$query = $this->db->where('lastnost.security_camera', 1);
+				$query = $this->db->where("izdelek.vrsta = 'hygiene'");
 			}
 			if(isset($_SESSION['no_strairs']) && $_SESSION['no_strairs'] == '1'){
-				$query = $this->db->where('lastnost.no_stairs', 1);
+				$query = $this->db->where("izdelek.vrsta = 'cleaning'");
 			}
 
 

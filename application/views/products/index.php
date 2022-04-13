@@ -23,7 +23,7 @@
         <?php echo validation_errors(); ?>
         <?php 
         $attributes = array('id' => 'form_search_a');
-        echo form_open('news/index', $attributes); 
+        echo form_open('walmart/index', $attributes); 
         ?>
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item index_padding_button">
@@ -98,56 +98,72 @@
 
           <li class="nav-item index_padding_button">
             <input <?php if(isset($_SESSION['climate_controlled']) && $_SESSION['climate_controlled'] == '1'){ echo "checked"; } ?> type="checkbox" class="btn-check" name = "climate_controlled_button" id="climate_controlled_check">
-            <label class="btn btn-outline-primary" for="climate_controlled_check">Climate controlled</label><br>
+            <label class="btn btn-outline-primary" for="climate_controlled_check">Sadje in zelenjava</label><br>
           </li>
 
           <li class="nav-item index_padding_button">
             <input <?php if(isset($_SESSION['smoke_free']) && $_SESSION['smoke_free'] == '1'){ echo "checked"; } ?> type="checkbox" class="btn-check" name = "smoke_free_button" id="smoke_free_button">
-            <label class="btn btn-outline-primary" for="smoke_free_button">Smoke free</label><br>
+            <label class="btn btn-outline-primary" for="smoke_free_button">hlajeni in mlecni izdelki</label><br>
           </li>
 
 
           <li class="nav-item index_padding_button">
             <input <?php if(isset($_SESSION['smoke_detectors']) && $_SESSION['smoke_detectors'] == '1'){ echo "checked"; } ?> type="checkbox" class="btn-check" name = "smoke_detectors_button" id="smoke_detectors_button">
-            <label class="btn btn-outline-primary" for="smoke_detectors_button">Smoke detectors</label><br>
+            <label class="btn btn-outline-primary" for="smoke_detectors_button">Mesni izdelki, meso in ribe</label><br>
           </li>
 
 
           <li class="nav-item index_padding_button">
             <input <?php if(isset($_SESSION['private_entrance']) && $_SESSION['private_entrance'] == '1'){ echo "checked"; } ?> type="checkbox" class="btn-check" name = "private_entrance_button" id="private_entrance_button">
-            <label class="btn btn-outline-primary" for="private_entrance_button">Private entrance</label><br>
+            <label class="btn btn-outline-primary" for="private_entrance_button">Prijace</label><br>
           </li>
 
 
           <li class="nav-item index_padding_button">
             <input <?php if(isset($_SESSION['private_space']) && $_SESSION['private_space'] == '1'){ echo "checked"; } ?> type="checkbox" class="btn-check" name = "private_space_button" id="private_space_button">
-            <label class="btn btn-outline-primary" for="private_space_button">Private space</label><br>
+            <label class="btn btn-outline-primary" for="private_space_button">Kruh, pecivo in slascice</label><br>
           </li>
 
           <li class="nav-item index_padding_button">
             <input <?php if(isset($_SESSION['locked_area']) && $_SESSION['locked_area'] == '1'){ echo "checked"; } ?> type="checkbox" class="btn-check" name = "locked_area_button" id="locked_area_button">
-            <label class="btn btn-outline-primary" for="locked_area_button">Locked area</label><br>
+            <label class="btn btn-outline-primary" for="locked_area_button">Zamrznjeni izdelki</label><br>
           </li>
 
           <li class="nav-item index_padding_button">
             <input <?php if(isset($_SESSION['pet_free']) && $_SESSION['pet_free'] == '1'){ echo "checked"; } ?> type="checkbox" class="btn-check" name = "pet_free_button" id="pet_free_button">
-            <label class="btn btn-outline-primary" for="pet_free_button">Pet free</label><br>
+            <label class="btn btn-outline-primary" for="pet_free_button">Za otroke</label><br>
           </li>
 
           <li class="nav-item index_padding_button">
             <input <?php if(isset($_SESSION['security_camera']) && $_SESSION['security_camera'] == '1'){ echo "checked"; } ?> type="checkbox" class="btn-check" name = "security_camera_button" id="security_camera_button">
-            <label class="btn btn-outline-primary" for="security_camera_button">Security camera</label><br>
+            <label class="btn btn-outline-primary" for="security_camera_button">Male zivali</label><br>
           </li>
 
           <li class="nav-item index_padding_button">
             <input <?php if(isset($_SESSION['no_strairs']) && $_SESSION['no_strairs'] == '1'){ echo "checked"; } ?> type="checkbox" class="btn-check" name = "no_strairs_button" id="no_strairs_button">
-            <label class="btn btn-outline-primary" for="no_strairs_button">No stairs</label><br>
+            <label class="btn btn-outline-primary" for="no_strairs_button">Dom in gospodinjstvo</label><br>
           </li>
+
+
+
+
 
           <li class="nav-item index_padding_button">
             <input id = "form_search_b" type="submit" class="btn btn-primary h-100 border border-danger" name="submit1" value="Find" />
           </li>
         </ul>
+
+
+        <!--<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+
+
+        </ul>-->
+
+
+
+
+
 
       </form>
     </div>
@@ -167,19 +183,20 @@
 
       
         <div class="col">
-          <a class = "space_ad" href="<?php echo site_url('news/view/'.$space_item['id_ad_space']); ?>">
+          <a class = "space_ad" href="<?php echo site_url('walmart/view/'.$space_item['id_ad_product']); ?>">
           <div class="card shadow-sm border rounded">
             <div class="container_image_index">
               <img class="rounded-lg mx-auto d-block image_fit_index" src="<?php echo base_url($space_item['pot_slika']);?>" width="100%" height="225">
-              <div class="text-over-image bottom-left_index rounded-pill"><h3 class="fw-bold"><?php echo $space_item['sirina']."X".$space_item['dolzina']; ?></h3></div>
-              <div class="text-over-image bottom-right_index rounded-pill"><h3 class="fw-bold"><?php echo $space_item['cena']."&euro;/month"; ?></h3></div>
+              <div class="text-over-image bottom-left_index rounded-pill"><h3 class="fw-bold">
+                <?php echo ($space_item['teza_g']/1000)."kg"; ?></h3></div>
+              <div class="text-over-image bottom-right_index rounded-pill"><h3 class="fw-bold"><?php echo $space_item['cena']."&euro; oz. ".$space_item['cena_tocke']."&#128871;"; ?></h3></div>
               <?php if($space_item['avg_oglas'] != ''){
                 echo "<div class='text-over-image top-right_index rounded-pill'><h6 class='fw-bold text-primary'>rating: ".substr($space_item['avg_oglas'], 0, 3)."</h6></div>";
                 }
                 ?>
             </div>
 
-            <?php 
+            <?php /*
               $name_space_first;
               if($space_item['opis_k'] == 'self_s_u' || $space_item['opis_k'] == 'self_storage'){
                 $name_space_first = 'Self storage unit';
@@ -187,11 +204,11 @@
                 $name_space_first = 'Shipping container';
               } else {
                 $name_space_first = ucfirst(str_replace("_", " ", $space_item['opis_k']));
-              }
+              }*/
             ?>
 
             <div class="card-body bg-primary">
-              <p class="card-text text-index-white font-weight-bold fw-bold"><?php echo $space_item['dolzina']."x"; echo $space_item['sirina']." "; echo $name_space_first." in ".$space_item['mesto'].", ".$space_item['drzava']; ?></p>
+              <p class="card-text text-index-white font-weight-bold fw-bold"><?php echo $space_item['ime']; ?></p>
               
             </div>
           </div>
@@ -211,7 +228,7 @@
         ?>
 
         <?php for($i = 0; $i < $times; $i++){ ?>
-        <li class="page-item <?php if($current_page == ($i+1)){echo " active"; }  ?>"><a class="page-link" href="<?php echo site_url('news/index/'.($i+1)); ?>"><?php echo ($i+1); ?></a></li>
+        <li class="page-item <?php if($current_page == ($i+1)){echo " active"; }  ?>"><a class="page-link" href="<?php echo site_url('walmart/index/'.($i+1)); ?>"><?php echo ($i+1); ?></a></li>
         <?php } ?>
 
       </ul>
