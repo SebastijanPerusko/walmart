@@ -26,49 +26,31 @@
         echo form_open('walmart/index', $attributes); 
         ?>
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item index_padding_button">
+          <!--<li class="nav-item index_padding_button">
             <input class="form-control border border-primary" name = "city_name" type="text" placeholder="Select the city" 
-            value="<?php if(isset($_SESSION['city_post'])){ echo $_SESSION['city_post']; } else { echo "";} ?>" 
+            value="<?php /*if(isset($_SESSION['city_post'])){ echo $_SESSION['city_post']; } else { echo "";} */?>" 
             aria-label="Search">
-          </li>
-
-          <li class="nav-item text-center index_padding_button">
-            <select class="form-select border border-primary" name="type_storage" aria-label="Default select example">
-              <option <?php if(isset($_SESSION['point_value']) && $_SESSION['point_value'] == "all"){ echo "selected"; } else if(!isset($point_value)) { echo "selected";} ?> value="all">All storages</option>
-              <option <?php if(isset($_SESSION['point_value']) && $_SESSION['point_value'] == "veichle"){ echo "selected"; } ?> value="veichle">Veichle storage</option>
-              <option <?php if(isset($_SESSION['point_value']) && $_SESSION['point_value'] == "object"){ echo "selected"; } ?> value="object">Object storage</option>
-            </select>
-          </li>
+          </li>-->
 
 
-          <li class="nav-item text-center index_padding_button">
-            <select class="form-select border border-primary" name="size_storage">
-              <option <?php if(isset($_SESSION['point_value_size']) && $_SESSION['point_value_size'] == "any_size"){ echo "selected"; } else if(!isset($point_value_size)) { echo "selected";} ?> value="any_size">All sizes</option>
-              <option <?php if(isset($_SESSION['point_value_size']) && $_SESSION['point_value_size'] == "extra_small"){ echo "selected"; } ?> value="extra_small">Extra small - less than 5x5</option>
-              <option <?php if(isset($_SESSION['point_value_size']) && $_SESSION['point_value_size'] == "small"){ echo "selected"; } ?> value="small">Small - from 5x5 to 10x10 </option>
-              <option <?php if(isset($_SESSION['point_value_size']) && $_SESSION['point_value_size'] == "medium"){ echo "selected"; } ?> value="medium">Medium - from 10x10 to 15x15</option>
-              <option <?php if(isset($_SESSION['point_value_size']) && $_SESSION['point_value_size'] == "large"){ echo "selected"; } ?> value="large">Large - from 15x15</option>
-            </select>
-          </li>
 
           <li class="nav-item text-center index_padding_button">
             <select class="form-select border border-primary" name="order_by" aria-label="Default select example">
-              <option <?php if(isset($_SESSION['order_ad']) && $_SESSION['order_ad'] == "oldest"){ echo "selected"; } else if(!isset($_SESSION['order_ad'])) { echo "selected";} ?> value="oldest">Oldest</option>
-              <option <?php if(isset($_SESSION['order_ad']) && $_SESSION['order_ad'] == "newest"){ echo "selected"; } ?> value="newest">Newest</option>
-              <option <?php if(isset($_SESSION['order_ad']) && $_SESSION['order_ad'] == "low_to_high"){ echo "selected"; } ?> value="low_to_high">Low to high price</option>
-              <option <?php if(isset($_SESSION['order_ad']) && $_SESSION['order_ad'] == "high_to_low"){ echo "selected"; } ?> value="high_to_low">High to low price</option>
-              <option <?php if(isset($_SESSION['order_ad']) && $_SESSION['order_ad'] == "low_to_high_r"){ echo "selected"; } ?> value="low_to_high_r">Low to high rating</option>
-              <option <?php if(isset($_SESSION['order_ad']) && $_SESSION['order_ad'] == "high_to_low_r"){ echo "selected"; } ?> value="high_to_low_r">High to low rating</option>
+              <option <?php if(isset($_SESSION['order_ad']) && $_SESSION['order_ad'] == "oldest"){ echo "selected"; } else if(!isset($_SESSION['order_ad'])) { echo "selected";} ?> value="oldest">Priporočano</option>
+              <option <?php if(isset($_SESSION['order_ad']) && $_SESSION['order_ad'] == "low_to_high"){ echo "selected"; } ?> value="low_to_high">Najnižji ceni</option>
+              <option <?php if(isset($_SESSION['order_ad']) && $_SESSION['order_ad'] == "high_to_low"){ echo "selected"; } ?> value="high_to_low">Najvišji ceni</option>
+              <option <?php if(isset($_SESSION['order_ad']) && $_SESSION['order_ad'] == "low_to_high_r"){ echo "selected"; } ?> value="low_to_high_r">Najnižji oceni</option>
+              <option <?php if(isset($_SESSION['order_ad']) && $_SESSION['order_ad'] == "high_to_low_r"){ echo "selected"; } ?> value="high_to_low_r">Najvišji ceni</option>
             </select>
           </li>
 
           <li class="nav-item text-center index_padding_button">
             <select class="form-select border border-primary" name="rating_order" aria-label="Default select example">
-              <option <?php if(isset($_SESSION['rating_ad']) && $_SESSION['rating_ad'] == "rating_none"){ echo "selected"; } else if(!isset($_SESSION['rating_ad'])) { echo "selected";} ?> value="rating_none">Rating: None</option>
-              <option <?php if(isset($_SESSION['rating_ad']) && $_SESSION['rating_ad'] == "1_greater"){ echo "selected"; } ?> value="1_greater">1 or greater</option>
-              <option <?php if(isset($_SESSION['rating_ad']) && $_SESSION['rating_ad'] == "2_greater"){ echo "selected"; } ?> value="2_greater">2 or greater</option>
-              <option <?php if(isset($_SESSION['rating_ad']) && $_SESSION['rating_ad'] == "3_greater"){ echo "selected"; } ?> value="3_greater">3 or greater</option>
-              <option <?php if(isset($_SESSION['rating_ad']) && $_SESSION['rating_ad'] == "4_greater"){ echo "selected"; } ?> value="4_greater">4 or greater</option>
+              <option <?php if(isset($_SESSION['rating_ad']) && $_SESSION['rating_ad'] == "rating_none"){ echo "selected"; } else if(!isset($_SESSION['rating_ad'])) { echo "selected";} ?> value="rating_none">Ocena: Brez</option>
+              <option <?php if(isset($_SESSION['rating_ad']) && $_SESSION['rating_ad'] == "1_greater"){ echo "selected"; } ?> value="1_greater">1 ali večja</option>
+              <option <?php if(isset($_SESSION['rating_ad']) && $_SESSION['rating_ad'] == "2_greater"){ echo "selected"; } ?> value="2_greater">2 ali večja</option>
+              <option <?php if(isset($_SESSION['rating_ad']) && $_SESSION['rating_ad'] == "3_greater"){ echo "selected"; } ?> value="3_greater">3 ali večja</option>
+              <option <?php if(isset($_SESSION['rating_ad']) && $_SESSION['rating_ad'] == "4_greater"){ echo "selected"; } ?> value="4_greater">4 ali večja</option>
               <option <?php if(isset($_SESSION['rating_ad']) && $_SESSION['rating_ad'] == "5_greater"){ echo "selected"; } ?> value="5_greater">5</option>
             </select>
           </li>
@@ -78,13 +60,13 @@
             <p>Price from</p>
           </li>-->
           <li class="nav-item index_padding_button">
-            <input class="form-control col-md-2 border border-primary" name = "start_price" type="text" placeholder = "Price from" value="<?php if(isset($_SESSION['price_from'])){ echo $_SESSION['price_from']; } else { echo "";} ?>" aria-label="Search">
+            <input class="form-control col-md-2 border border-primary" name = "start_price" type="text" placeholder = "Cena od" value="<?php if(isset($_SESSION['price_from'])){ echo $_SESSION['price_from']; } else { echo "";} ?>" aria-label="Search">
           </li>
           <!--<li class="nav-item align-middle">
             <p> to </p>
           </li>-->
           <li class="nav-item index_padding_button">
-            <input class="form-control col-lg-5 border border-primary" name = "end_price" type="text" placeholder = "Price to" value="<?php if(isset($_SESSION['price_end'])){ echo $_SESSION['price_end']; } else { echo "";} ?>" aria-label="Search">
+            <input class="form-control col-lg-5 border border-primary" name = "end_price" type="text" placeholder = "Cena do" value="<?php if(isset($_SESSION['price_end'])){ echo $_SESSION['price_end']; } else { echo "";} ?>" aria-label="Search">
           </li>
 
           </ul>
@@ -131,12 +113,12 @@
 
           <li class="nav-item index_padding_button">
             <input <?php if(isset($_SESSION['pet_free']) && $_SESSION['pet_free'] == '1'){ echo "checked"; } ?> type="checkbox" class="btn-check" name = "pet_free_button" id="pet_free_button">
-            <label class="btn btn-outline-primary" for="pet_free_button">Za otroke</label><br>
+            <label class="btn btn-outline-primary" for="pet_free_button">Zivali</label><br>
           </li>
 
           <li class="nav-item index_padding_button">
             <input <?php if(isset($_SESSION['security_camera']) && $_SESSION['security_camera'] == '1'){ echo "checked"; } ?> type="checkbox" class="btn-check" name = "security_camera_button" id="security_camera_button">
-            <label class="btn btn-outline-primary" for="security_camera_button">Male zivali</label><br>
+            <label class="btn btn-outline-primary" for="security_camera_button">Osebna nega</label><br>
           </li>
 
           <li class="nav-item index_padding_button">

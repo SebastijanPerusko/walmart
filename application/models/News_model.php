@@ -116,7 +116,7 @@ class News_model extends CI_Model {
 			if(isset($_SESSION['city_post']) && $_SESSION['city_post'] != ''){
 				$query = $this->db->where('UPPER(oglas.mesto)', strtoupper($_SESSION['city_post']));
 			}*/
-						if(isset($_SESSION['price_from']) && !empty($_SESSION['price_from'])){
+			if(isset($_SESSION['price_from']) && !empty($_SESSION['price_from'])){
 				$query = $this->db->where('izdelek.cena >=', intval($_SESSION['price_from']));
 			}
 			if(isset($_SESSION['price_end']) && !empty($_SESSION['price_end'])){
@@ -149,7 +149,7 @@ class News_model extends CI_Model {
 				$query = $this->db->where("izdelek.vrsta = 'hygiene'");
 			}
 			if(isset($_SESSION['no_strairs']) && $_SESSION['no_strairs'] == '1'){
-				$query = $this->db->where("izdelek.vrsta = 'cleaning'");
+				$query = $this->db->where("izdelek.vrsta = 'house'");
 			}
 
 

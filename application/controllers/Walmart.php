@@ -20,8 +20,9 @@
 	                 $this->load->helper('form');
 			    	$this->load->library('form_validation');
 			    	
-			    	$this->form_validation->set_rules('type_storage', 'type_storage', 'required');
-			    	$this->form_validation->set_rules('size_storage', 'size_storage', 'required');
+			    	# $this->form_validation->set_rules('type_storage', 'type_storage', 'required');
+			    	# $this->form_validation->set_rules('size_storage', 'size_storage', 'required');
+			    	$this->form_validation->set_rules('order_by', 'order_by', 'required');
 
 	                if ($this->form_validation->run() === FALSE)
 				    {
@@ -48,10 +49,8 @@
 				    {
 				    	$data['city_post'] = $this->input->post('city_name');
 				        $_SESSION['city_post'] = $this->input->post('city_name');
-				        $data['point_value'] = $this->input->post('type_storage');
-				        $_SESSION['point_value'] = $this->input->post('type_storage');
-				        $data['point_value_size'] = $this->input->post('size_storage');
-				        $_SESSION['point_value_size'] = $this->input->post('size_storage');
+
+
 				        $data['price_from'] = $this->input->post('start_price');
 				        $_SESSION['price_from'] = $this->input->post('start_price');
 				        $data['price_end'] = $this->input->post('end_price');
