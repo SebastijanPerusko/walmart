@@ -73,10 +73,13 @@
         </section>
 
 
+<div class="container">
+    <div class="row">
 
+        <div class="col-xs-6 w-50">
 
 <hr class="featurette-divider">
-<h2 class='text-justify display-5 fw-bold display-5 inline'>Oceni izdelek</h2>
+<h2 class='text-justify display-5 fw-bold display-5 inline'>OCENI IZDELEK</h2>
 
 
 
@@ -96,7 +99,7 @@
 
                 <?php echo form_open('walmart/vote'); ?>
                 <input type="hidden" name="id_space" value=<?php echo $space_item['id']; ?>>
-                <div id = "div_vote_space" class ="inline">
+                <div id = "div_vote_space" class ="">
                         <div id="vote_space" class="btn-group" data-toggle="buttons">
                                 <label class="btn btn-default">
                                         <input <?php if($vote_ad['vrednost'] == "1"){ echo "checked"; } ?> id = "location_select_radio_i" type="radio" name="vote_space" value="1"/> 1
@@ -113,23 +116,26 @@
                                 <label class="btn btn-default">
                                         <input <?php if($vote_ad['vrednost'] == "5"){ echo "checked"; } ?> id = "location_select_radio_c" type="radio"  name="vote_space" value="5"/> 5
                                 </label>
-                        </div><input class="btn btn-primary" type="submit" name="submit" value="Oceni" />
+                        </div>
+                        <input class="btn btn-primary" type="submit" name="submit" value="Oceni" />
                 </div><br>
         </form>
         <?php
         if(isset($_SESSION['logged_in'])){
                $arr = $_SESSION['logged_in']; 
                if($vote_ad['id_u'] == $arr['id_u']){
-                        echo "<p class = 'comment_button d-inline btn btn-lg btn-outline-primary text-decoration-none'><a onclick=".'"return confirm(&quot Are you sure you want to delete?&quot);"'." href=".site_url('walmart/delete_vote/'.$vote_ad['id']).">Odstrani mojo oceno</a></p>";
+                        echo "<p class = 'comment_button d-inline text-decoration-none'><a onclick=".'"return confirm(&quot Are you sure you want to delete?&quot);"'." href=".site_url('walmart/delete_vote/'.$vote_ad['id']).">Odstrani mojo oceno</a></p>";
                 }
         } 
 
         ?>
 
-        
-<hr class="featurette-divider">
-<h2 class='text-justify display-5 fw-bold'>Mnenja</h2>
+</div>
 
+ <div class="col-xs-6 w-50">
+
+<hr class="featurette-divider">
+<h2 class='text-justify display-5 fw-bold display-5 inline'>OBJAVI MNENJE</h2>
 <?php echo form_open('walmart/comment'); ?>
 
 <label for="comment">Objavi mnenje</label>
@@ -137,17 +143,28 @@
 <input type="hidden" name="id_space" value=<?php echo $space_item['id']; ?>>
 <input class = 'comment_button d-inline btn btn-primary text-decoration-none' type="submit" name="submit" value="Objavi mnenje" />
 </form>
+</div>
+</div>
+</div>
 
-<div class="row">
+        
+<hr class="featurette-divider">
+
+
+
+
+<h2 class='text-justify display-5 fw-bold'>MNENJA</h2>
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
 <?php foreach ($comment as $comment_item): ?>
 
-        <div class="col-lg-4 ">
+        <div class="card-body w-25 border border-primary rounded mx-1">
+                <h6 class="card-title">Komentar uporabnika <?php echo $comment_item['username']; ?></h6>
+                <p class="card-title"><?php echo $comment_item['datumura']; ?></p>
                 <?php echo form_open("walmart/edit_comment"); ?>
                         <input type="hidden" name="id_ad_c" value="<?php echo $comment_item['id_o']; ?>">
                         <div id = "<?php echo "comment_div".$comment_item['id_ads']; ?>">
                         <h3 id="<?php echo "comment_title".$comment_item['id_ads']; ?>"><?php echo $comment_item['vsebina']; ?></h3>
                         </div>
-                        <p id="<?php echo "comment_text".$comment_item['id_ads']; ?>"><?php echo $comment_item['username'].", ".$comment_item['datumura']; ?></p>
                 </form>
                 
         
@@ -156,8 +173,8 @@
         if(isset($_SESSION['logged_in'])){
                $arr = $_SESSION['logged_in']; 
                if($comment_item['id_u'] == $arr['id_u']){
-                echo "<button onclick='comment_edit(".$comment_item['id_ads'].")' class = 'comment_button d-inline btn btn-lg btn-outline-primary text-decoration-none'>Spremeni vsebino mnenja</button>";
-                echo "<p class = 'comment_button d-inline btn btn-lg btn-outline-primary text-decoration-none'><a onclick=".'"return confirm(&quot Are you sure you want to delete?&quot);"'." href=".site_url('walmart/delete_comment/'.$comment_item['id_ads']).">Odstani mnenje</a></p>";
+                echo "<button onclick='comment_edit(".$comment_item['id_ads'].")' class = 'comment_button d-inline btn btn-primary text-decoration-none text-light' role='button'>Spremeni vsebino mnenja</button>";
+                echo "<p class = 'comment_button d-inline text-light' style='color: white !important;'><a onclick=".'"return confirm(&quot Are you sure you want to delete?&quot);"'." href=".site_url('walmart/delete_comment/'.$comment_item['id_ads'])."><p>Odstani mnenje</p></a></p>";
         } 
 }
 ?>
