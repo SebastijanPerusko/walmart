@@ -311,6 +311,13 @@ class News_model extends CI_Model {
 			}
 
 
+			if(isset($_SESSION['search']) && !empty($_SESSION['search'])){
+				$query = $this->db->where('LOWER(izdelek.ime) LIKE "%'.$_SESSION['search'].'%"');
+				# $query = $this->db->where('LOWER(izdelek.ime) LIKE', $_SESSION['search']);
+				# $query = $this->db->like($_SESSION['search']);
+			}
+
+
 			if(isset($_SESSION['climate_controlled']) && $_SESSION['climate_controlled'] == '1'){
 				$query = $this->db->where("izdelek.vrsta = 'fruit_veg'");
 			}

@@ -44,6 +44,24 @@
 
 
 
+
+          <li class="nav-item index_padding_button text-center align-middle">
+            <h5 class = "fw-bold text-center align-middle">Iskalnik: </h5>
+          </li>
+
+
+          <li class="nav-item index_padding_button">
+            <input class="form-control col-lg-5 border border-light" name = "search" type="text" placeholder = "Isci" value="<?php if(isset($_SESSION['search'])){ echo $_SESSION['search']; } else { echo "";} ?>" aria-label="Search">
+          </li>
+          <hr>
+
+
+          <li class="nav-item index_padding_button text-center align-middle">
+            <h5 class = "fw-bold text-center align-middle">Filtri: </h5>
+          </li>
+
+
+
           <li class="nav-item text-center index_padding_button">
             <select class="form-select border border-light" name="order_by" aria-label="Default select example">
               <option <?php if(isset($_SESSION['order_ad']) && $_SESSION['order_ad'] == "oldest"){ echo "selected"; } else if(!isset($_SESSION['order_ad'])) { echo "selected";} ?> value="oldest">Priporočano</option>
@@ -82,6 +100,8 @@
           </ul>
 
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+            <hr>
 
           <li class="nav-item index_padding_button text-center align-middle">
             <h5 class = "fw-bold text-center align-middle">Kategorije: </h5>
@@ -241,7 +261,7 @@
             ?>
 
             <div class="card-body bg-primary">
-              <p class="card-text text-index-white font-weight-bold fw-bold" style='height: 65px;'><?php echo $space_item['ime']." - ".$space_item['teza_g']."kg"; ?></p>
+              <p class="card-text text-index-white font-weight-bold fw-bold" style='height: 65px;'><?php echo $space_item['ime']." - ".($space_item['teza_g']/1000)."kg"; ?></p>
               
             </div>
           </div>

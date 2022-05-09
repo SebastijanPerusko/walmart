@@ -51,12 +51,18 @@
 				        $_SESSION['city_post'] = $this->input->post('city_name');
 
 
+				        $data['search'] = $this->input->post('search');
+				        $_SESSION['search'] = $this->input->post('search');
+
+
 				        $data['price_from'] = $this->input->post('start_price');
 				        $_SESSION['price_from'] = $this->input->post('start_price');
 				        $data['price_end'] = $this->input->post('end_price');
 				        $_SESSION['price_end'] = $this->input->post('end_price');
 				        $_SESSION['order_ad'] = $this->input->post('order_by');
 				        $_SESSION['rating_ad'] = $this->input->post('rating_order');
+
+
 
 				        if(isset($_POST['climate_controlled_button'])){
 				        	$_SESSION['climate_controlled'] = "1";
