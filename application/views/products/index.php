@@ -155,16 +155,16 @@
 
 
 
-<div class="album py-5 bg-light">
+<div class="album py-2 bg-light">
   <div class="container">
 
 <?php $num_iteration = 0;?>
 
-<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-md-4 row-cols-md-5 g-5">
 <?php foreach ($space as $space_item): ?>
 
       
-        <div class="col">
+        <div class="col p-1">
           <a class = "space_ad" href="<?php echo site_url('walmart/view/'.$space_item['id_ad_product']); ?>">
           <div class="card shadow-sm border rounded">
             <div class="container_image_index">
