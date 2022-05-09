@@ -517,7 +517,7 @@
 	                $data['comment'] = $this->news_model->get_comment($num_comment['id_o'], NULL);
 	                $data['vote_ad'] = $this->news_model->get_vote($num_comment['id_o'], NULL);
 	                $data['vote_ad_avg'] = $this->news_model->get_avg_vote($num_comment['id_o'], NULL);
-	                $data['warning'] = "Your comment has been deleted.";
+	                $data['warning'] = "Vaše mnenje je bilo uspešno posodobljeno.";
 
 	                $data["opis"] = "News";
 	                /*var_dump($data["news_item"]);*/
@@ -860,13 +860,13 @@
 	                $data['comment'] = $this->news_model->get_comment($this->input->post('id_ad_c'), NULL);
 	                $data['vote_ad'] = $this->news_model->get_vote($this->input->post('id_ad_c'), NULL);
 	                $data['vote_ad_avg'] = $this->news_model->get_avg_vote($num, NULL);
-	                $data['warning'] = "Your comment has been edited.";
+	                $data['warning'] = "Vaše mnenje je bilo uspešno posodobljeno.";
 
 	                $data["opis"] = "News";
 	                /*var_dump($data["news_item"]);*/
 	                $this->load->view('templates/header', $data);
 	                /*var_dump($data["news"]);*/
-	                $this->load->view('space/view', $data);
+	                $this->load->view('products/view', $data);
 	                $this->load->view('templates/footer');
 			    }
 			}

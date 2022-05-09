@@ -14,13 +14,23 @@
 
 
 
-<div class="container">
-  <nav class="navbar navbar-expand-lg navbar-light bg-light rounded">
-    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
 
 
-      <div class="collapse navbar-collapse">
-        <?php echo validation_errors(); ?>
+
+
+
+<div class="album py-2 bg-light">
+  <div class="container">
+    <div class="row">
+
+        <div class="col-md-3">
+          <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-primary w-100">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+          <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+          <span class="fs-4">Filtriraj izdelke</span>
+        </a>
+        <hr>
+<?php echo validation_errors(); ?>
         <?php 
         $attributes = array('id' => 'form_search_a');
         echo form_open('walmart/index', $attributes); 
@@ -35,17 +45,17 @@
 
 
           <li class="nav-item text-center index_padding_button">
-            <select class="form-select border border-primary" name="order_by" aria-label="Default select example">
+            <select class="form-select border border-light" name="order_by" aria-label="Default select example">
               <option <?php if(isset($_SESSION['order_ad']) && $_SESSION['order_ad'] == "oldest"){ echo "selected"; } else if(!isset($_SESSION['order_ad'])) { echo "selected";} ?> value="oldest">Priporočano</option>
               <option <?php if(isset($_SESSION['order_ad']) && $_SESSION['order_ad'] == "low_to_high"){ echo "selected"; } ?> value="low_to_high">Najnižji ceni</option>
               <option <?php if(isset($_SESSION['order_ad']) && $_SESSION['order_ad'] == "high_to_low"){ echo "selected"; } ?> value="high_to_low">Najvišji ceni</option>
               <option <?php if(isset($_SESSION['order_ad']) && $_SESSION['order_ad'] == "low_to_high_r"){ echo "selected"; } ?> value="low_to_high_r">Najnižji oceni</option>
-              <option <?php if(isset($_SESSION['order_ad']) && $_SESSION['order_ad'] == "high_to_low_r"){ echo "selected"; } ?> value="high_to_low_r">Najvišji ceni</option>
+              <option <?php if(isset($_SESSION['order_ad']) && $_SESSION['order_ad'] == "high_to_low_r"){ echo "selected"; } ?> value="high_to_low_r">Najvišji oceni</option>
             </select>
           </li>
 
           <li class="nav-item text-center index_padding_button">
-            <select class="form-select border border-primary" name="rating_order" aria-label="Default select example">
+            <select class="form-select border border-light" name="rating_order" aria-label="Default select example">
               <option <?php if(isset($_SESSION['rating_ad']) && $_SESSION['rating_ad'] == "rating_none"){ echo "selected"; } else if(!isset($_SESSION['rating_ad'])) { echo "selected";} ?> value="rating_none">Ocena: Brez</option>
               <option <?php if(isset($_SESSION['rating_ad']) && $_SESSION['rating_ad'] == "1_greater"){ echo "selected"; } ?> value="1_greater">1 ali večja</option>
               <option <?php if(isset($_SESSION['rating_ad']) && $_SESSION['rating_ad'] == "2_greater"){ echo "selected"; } ?> value="2_greater">2 ali večja</option>
@@ -60,13 +70,13 @@
             <p>Price from</p>
           </li>-->
           <li class="nav-item index_padding_button">
-            <input class="form-control col-md-2 border border-primary" name = "start_price" type="text" placeholder = "Cena od" value="<?php if(isset($_SESSION['price_from'])){ echo $_SESSION['price_from']; } else { echo "";} ?>" aria-label="Search">
+            <input class="form-control col-md-2 border border-light" name = "start_price" type="text" placeholder = "Cena od" value="<?php if(isset($_SESSION['price_from'])){ echo $_SESSION['price_from']; } else { echo "";} ?>" aria-label="Search">
           </li>
           <!--<li class="nav-item align-middle">
             <p> to </p>
           </li>-->
           <li class="nav-item index_padding_button">
-            <input class="form-control col-lg-5 border border-primary" name = "end_price" type="text" placeholder = "Cena do" value="<?php if(isset($_SESSION['price_end'])){ echo $_SESSION['price_end']; } else { echo "";} ?>" aria-label="Search">
+            <input class="form-control col-lg-5 border border-light" name = "end_price" type="text" placeholder = "Cena do" value="<?php if(isset($_SESSION['price_end'])){ echo $_SESSION['price_end']; } else { echo "";} ?>" aria-label="Search">
           </li>
 
           </ul>
@@ -74,56 +84,56 @@
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
           <li class="nav-item index_padding_button text-center align-middle">
-            <h5 class = "fw-bold text-center align-middle">Features: </h5>
+            <h5 class = "fw-bold text-center align-middle">Kategorije: </h5>
           </li>
 
 
           <li class="nav-item index_padding_button">
-            <input <?php if(isset($_SESSION['climate_controlled']) && $_SESSION['climate_controlled'] == '1'){ echo "checked"; } ?> type="checkbox" class="btn-check" name = "climate_controlled_button" id="climate_controlled_check">
-            <label class="btn btn-outline-primary" for="climate_controlled_check">Sadje in zelenjava</label><br>
+            <input <?php if(isset($_SESSION['climate_controlled']) && $_SESSION['climate_controlled'] == '1'){ echo "checked"; } ?> type="checkbox" class="btn-check" name = "climate_controlled_button" id="climate_controlled_check" class="w-100">
+            <label class="btn btn-outline-light w-100" for="climate_controlled_check">Sadje in zelenjava</label><br>
           </li>
 
           <li class="nav-item index_padding_button">
             <input <?php if(isset($_SESSION['smoke_free']) && $_SESSION['smoke_free'] == '1'){ echo "checked"; } ?> type="checkbox" class="btn-check" name = "smoke_free_button" id="smoke_free_button">
-            <label class="btn btn-outline-primary" for="smoke_free_button">hlajeni in mlecni izdelki</label><br>
+            <label class="btn btn-outline-light w-100" for="smoke_free_button">hlajeni in mlecni izdelki</label><br>
           </li>
 
 
           <li class="nav-item index_padding_button">
             <input <?php if(isset($_SESSION['smoke_detectors']) && $_SESSION['smoke_detectors'] == '1'){ echo "checked"; } ?> type="checkbox" class="btn-check" name = "smoke_detectors_button" id="smoke_detectors_button">
-            <label class="btn btn-outline-primary" for="smoke_detectors_button">Mesni izdelki, meso in ribe</label><br>
+            <label class="btn btn-outline-light w-100" for="smoke_detectors_button">Mesni izdelki, meso in ribe</label><br>
           </li>
 
 
           <li class="nav-item index_padding_button">
             <input <?php if(isset($_SESSION['private_entrance']) && $_SESSION['private_entrance'] == '1'){ echo "checked"; } ?> type="checkbox" class="btn-check" name = "private_entrance_button" id="private_entrance_button">
-            <label class="btn btn-outline-primary" for="private_entrance_button">Prijace</label><br>
+            <label class="btn btn-outline-light w-100" for="private_entrance_button">Prijace</label><br>
           </li>
 
 
           <li class="nav-item index_padding_button">
             <input <?php if(isset($_SESSION['private_space']) && $_SESSION['private_space'] == '1'){ echo "checked"; } ?> type="checkbox" class="btn-check" name = "private_space_button" id="private_space_button">
-            <label class="btn btn-outline-primary" for="private_space_button">Kruh, pecivo in slascice</label><br>
+            <label class="btn btn-outline-light w-100" for="private_space_button">Kruh, pecivo in slascice</label><br>
           </li>
 
           <li class="nav-item index_padding_button">
             <input <?php if(isset($_SESSION['locked_area']) && $_SESSION['locked_area'] == '1'){ echo "checked"; } ?> type="checkbox" class="btn-check" name = "locked_area_button" id="locked_area_button">
-            <label class="btn btn-outline-primary" for="locked_area_button">Zamrznjeni izdelki</label><br>
+            <label class="btn btn-outline-light w-100" for="locked_area_button">Zamrznjeni izdelki</label><br>
           </li>
 
           <li class="nav-item index_padding_button">
             <input <?php if(isset($_SESSION['pet_free']) && $_SESSION['pet_free'] == '1'){ echo "checked"; } ?> type="checkbox" class="btn-check" name = "pet_free_button" id="pet_free_button">
-            <label class="btn btn-outline-primary" for="pet_free_button">Zivali</label><br>
+            <label class="btn btn-outline-light w-100" for="pet_free_button">Zivali</label><br>
           </li>
 
           <li class="nav-item index_padding_button">
             <input <?php if(isset($_SESSION['security_camera']) && $_SESSION['security_camera'] == '1'){ echo "checked"; } ?> type="checkbox" class="btn-check" name = "security_camera_button" id="security_camera_button">
-            <label class="btn btn-outline-primary" for="security_camera_button">Osebna nega</label><br>
+            <label class="btn btn-outline-light w-100" for="security_camera_button">Osebna nega</label><br>
           </li>
 
           <li class="nav-item index_padding_button">
             <input <?php if(isset($_SESSION['no_strairs']) && $_SESSION['no_strairs'] == '1'){ echo "checked"; } ?> type="checkbox" class="btn-check" name = "no_strairs_button" id="no_strairs_button">
-            <label class="btn btn-outline-primary" for="no_strairs_button">Dom in gospodinjstvo</label><br>
+            <label class="btn btn-outline-light w-100" for="no_strairs_button">Dom in gospodinjstvo</label><br>
           </li>
 
 
@@ -131,7 +141,7 @@
 
 
           <li class="nav-item index_padding_button">
-            <input id = "form_search_b" type="submit" class="btn btn-primary h-100 border border-danger" name="submit1" value="Find" />
+            <input id = "form_search_b" type="submit" class="btn btn-primary text-primary bg-light h-100 border border-warning" name="submit1" value="Išči" />
           </li>
         </ul>
 
@@ -148,20 +158,61 @@
 
 
       </form>
+
+
+
+
+        <hr>
+        <!--<ul class="nav nav-pills flex-column mb-auto">
+          <li class="nav-item">
+            <a href="#" class="nav-link active" aria-current="page">
+              <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
+              Home
+            </a>
+          </li>
+          <li>
+            <a href="#" class="nav-link text-white">
+              <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
+              Dashboard
+            </a>
+          </li>
+          <li>
+            <a href="#" class="nav-link text-white">
+              <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
+              Orders
+            </a>
+          </li>
+          <li>
+            <a href="#" class="nav-link text-white">
+              <svg class="bi me-2" width="16" height="16"><use xlink:href="#grid"></use></svg>
+              Products
+            </a>
+          </li>
+          <li>
+            <a href="#" class="nav-link text-white">
+              <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"></use></svg>
+              Customers
+            </a>
+          </li>
+        </ul>
+        <hr>-->
+        <div class="dropdown">
+          <a href="#">
+            <h1><i class="bi bi-caret-up-square-fill bg-light"></i></h1>
+          </a>
+        </div>
+      </div>
     </div>
-  </nav>
-</div>
 
 
 
-
-<div class="album py-2 bg-light">
-  <div class="container">
-
+<div class="col-md-9">
 <?php $num_iteration = 0;?>
 
-<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-md-4 row-cols-md-5 g-5">
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-md-4 g-4">
 <?php foreach ($space as $space_item): ?>
+
+
 
       
         <div class="col p-1">
@@ -169,11 +220,11 @@
           <div class="card shadow-sm border rounded">
             <div class="container_image_index">
               <img class="rounded-lg mx-auto d-block image_fit_index" src="<?php echo base_url($space_item['pot_slika']);?>" width="100%" height="225">
-              <div class="text-over-image bottom-left_index rounded-pill"><h3 class="fw-bold">
-                <?php echo ($space_item['teza_g']/1000)."kg"; ?></h3></div>
-              <div class="text-over-image bottom-right_index rounded-pill"><h3 class="fw-bold"><?php echo $space_item['cena']."&euro; oz. ".$space_item['cena_tocke']."&#128871;"; ?></h3></div>
+              <!--<div class="text-over-image bottom-left_index rounded-pill"><h3 class="fw-bold">
+                <?php/* echo ($space_item['teza_g']/1000)."kg"; */?></h3></div>-->
+              <div class="text-over-image bottom-right_index bg-danger"><h6 class="fw-bold text-light"><?php echo $space_item['cena']."&euro; oz. ".$space_item['cena_tocke']."&#128871;"; ?></h6></div>
               <?php if($space_item['avg_oglas'] != ''){
-                echo "<div class='text-over-image top-right_index rounded-pill'><h6 class='fw-bold text-primary'>rating: ".substr($space_item['avg_oglas'], 0, 3)."</h6></div>";
+                echo "<div class='text-over-image top-right_index bg-transparent'><h6 class='fw-bold text-danger'>Ocena uporabnikov: ".substr($space_item['avg_oglas'], 0, 3)."</h6></div>";
                 }
                 ?>
             </div>
@@ -190,7 +241,7 @@
             ?>
 
             <div class="card-body bg-primary">
-              <p class="card-text text-index-white font-weight-bold fw-bold"><?php echo $space_item['ime']; ?></p>
+              <p class="card-text text-index-white font-weight-bold fw-bold" style='height: 65px;'><?php echo $space_item['ime']." - ".$space_item['teza_g']."kg"; ?></p>
               
             </div>
           </div>
@@ -201,8 +252,7 @@
 <?php endforeach; ?>
 </div>
 
-
-  <div class="col-12 text-decoration-none">
+<div class="col-12 text-decoration-none">
       <nav aria-label="Page navigation example">
       <ul class="pagination">
         <?php $times = intval($num_space / 12);
@@ -216,8 +266,8 @@
       </ul>
     </nav>
   </div>
-
-
+</div>
+</div>
 </div>
 
 </div>

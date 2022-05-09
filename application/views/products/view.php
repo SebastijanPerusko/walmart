@@ -128,20 +128,20 @@
 
         
 <hr class="featurette-divider">
-<h2 class='text-justify display-5 fw-bold'>Comments</h2>
+<h2 class='text-justify display-5 fw-bold'>Mnenja</h2>
 
 <?php echo form_open('walmart/comment'); ?>
 
-<label for="comment">Post a comment</label>
+<label for="comment">Objavi mnenje</label>
 <input class="form-control" type="textarea" name="comment" rows="4" /><br />
 <input type="hidden" name="id_space" value=<?php echo $space_item['id']; ?>>
-<input class = 'comment_button d-inline btn btn-primary text-decoration-none' type="submit" name="submit" value="Publish comment" />
+<input class = 'comment_button d-inline btn btn-primary text-decoration-none' type="submit" name="submit" value="Objavi mnenje" />
 </form>
 
 <div class="row">
 <?php foreach ($comment as $comment_item): ?>
 
-        <div class="col-lg-4">
+        <div class="col-lg-4 ">
                 <?php echo form_open("walmart/edit_comment"); ?>
                         <input type="hidden" name="id_ad_c" value="<?php echo $comment_item['id_o']; ?>">
                         <div id = "<?php echo "comment_div".$comment_item['id_ads']; ?>">
@@ -156,8 +156,8 @@
         if(isset($_SESSION['logged_in'])){
                $arr = $_SESSION['logged_in']; 
                if($comment_item['id_u'] == $arr['id_u']){
-                echo "<button onclick='comment_edit(".$comment_item['id_ads'].")' class = 'comment_button d-inline btn btn-lg btn-outline-primary text-decoration-none'>Edit comment</button>";
-                echo "<p class = 'comment_button d-inline btn btn-lg btn-outline-primary text-decoration-none'><a onclick=".'"return confirm(&quot Are you sure you want to delete?&quot);"'." href=".site_url('walmart/delete_comment/'.$comment_item['id_ads']).">Delete comment</a></p>";
+                echo "<button onclick='comment_edit(".$comment_item['id_ads'].")' class = 'comment_button d-inline btn btn-lg btn-outline-primary text-decoration-none'>Spremeni vsebino mnenja</button>";
+                echo "<p class = 'comment_button d-inline btn btn-lg btn-outline-primary text-decoration-none'><a onclick=".'"return confirm(&quot Are you sure you want to delete?&quot);"'." href=".site_url('walmart/delete_comment/'.$comment_item['id_ads']).">Odstani mnenje</a></p>";
         } 
 }
 ?>
