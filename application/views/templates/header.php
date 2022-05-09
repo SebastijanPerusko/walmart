@@ -27,11 +27,11 @@
       <!--<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>-->
     </form>
 
-
+    <!--border border-light-->
 
     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
       <li class="nav-item">
-        <a class="nav-link active text-light fw-bold border border-light rounded m-1" aria-current="page" href="<?php echo site_url('walmart/index'); ?>"><h2><i class="bi bi-house"></i></h2></i></a>
+        <a class="nav-link active text-light border-end fw-bold rounded m-1" aria-current="page" href="<?php echo site_url('walmart/index'); ?>"><h2><i class="bi bi-house"></i></h2></i></a>
       </li>
       <?php 
       /*if(isset($_SESSION['logged_in'])){
@@ -44,21 +44,21 @@
       if(isset($_SESSION['logged_in'])){
         $name_profile = ucfirst($this->session->userdata['logged_in']['username']);
         $add_log = site_url('user_authentication/profile');
-        echo ' <li class="nav-item"><a class="nav-link active text-light fw-bold border border-light rounded m-1" aria-current="page" href="'.$add_log.'"><i class="bi bi-person-circle"></i><span class = "text-light">'.$name_profile.'</span></a></li>';
+        echo ' <li class="nav-item"><a class="nav-link active text-light fw-bold  rounded m-1" aria-current="page" href="'.$add_log.'"><i class="bi bi-person-circle"></i><span class = "text-light">'.$name_profile.'</span></a></li>';
       }
       ?>
 
       <?php 
       if(!isset($_SESSION['logged_in'])){
         $add = site_url('user_authentication/signin');
-        echo '<li class="nav-item"><a class="nav-link active text-light fw-bold border border-light rounded m-1" aria-current="page" href="'.$add.'">Singin</a></li>';
+        echo '<li class="nav-item"><a class="nav-link active text-light fw-bold border-start rounded m-1" aria-current="page" href="'.$add.'"><h2><i class="bi bi-arrow-bar-right"></i></h2></a></li>';
       }
       ?>
 
       <?php 
       if(isset($_SESSION['logged_in'])){
         $add_log_out = site_url('user_authentication/logout');
-        echo '<li class="nav-item"><a class="nav-link active text-light border border-light rounded m-1" aria-current="page" href="'.$add_log_out.'"><h1><i class="bi bi-box-arrow-right"></i></h1></a></li>';
+        echo '<li class="nav-item"><a class="nav-link active text-light border-start rounded m-1" aria-current="page" href="'.$add_log_out.'"><h2><i class="bi bi-box-arrow-right"></i></h2></a></li>';
       }
       ?>
     </ul>

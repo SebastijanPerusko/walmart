@@ -10,65 +10,73 @@
                     echo "</h2>";
                 } ?>
 
-                <div class="row featurette">
-                      <div class="col-md-3 order-md-2">
-                        <h2 class="featurette-heading display-5 fw-bold"><?php echo $space_item['kj']; ?><div class="text-muted">
-                                <?php echo form_open('products/reserve/'.$space_item['id']); ?>
-                                <input class="w-100 btn btn-primary border border-danger" type="submit" name="submit" value="buy" />
-                        </form></div></h2>
-                        <p class="lead">
 
-                        </p>
+
+                <section class="py-5">
+            <div class="container px-4 px-lg-5 my-5">
+                <div class="row gx-4 gx-lg-5 align-items-center">
+                    <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="<?php echo base_url($space_item['pot_slika']);?>" alt="..." /></div>
+                    <div class="col-md-6">
+                        <!--<div class="small mb-1">SKU: BST-498</div>-->
+                        <h1 class="display-5 fw-bolder"><?php echo $space_item['ime']; ?></h1>
+                        <div class="fs-5 mb-5">
+                            <span class="text-decoration-line-through"><?php echo $space_item['cena']+0.99."€"; ?></span>
+                            <span><?php echo $space_item['cena']."€ oz.".$space_item['cena_tocke']."&#128871;"; ?></span>
+                        </div>
+                        <p class="lead"><?php echo $space_item['opis']; ?></p>
+
+                        <table class="table">
+                          <thead>
+                            <tr>
+                              <th scope="col">Povprečna hranilna vrednost</th>
+                              <th scope="col">na 100g</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>Kcal</td>
+                              <td><?php echo $space_item['kcal']; ?></td>
+                            </tr>
+                            <tr>
+                              <td>kj</td>
+                              <td><?php echo $space_item['kcal']; ?></td>
+                            </tr>
+                            <tr>
+                              <td>Maščobe</td>
+                              <td><?php echo $space_item['kcal']; ?></td>
+                            </tr>
+                            <tr>
+                              <td>Oglikovi hidrati</td>
+                              <td><?php echo $space_item['ogljikovi_hidrati']; ?></td>
+                            </tr>
+                            <tr>
+                              <td>Beljakovine</td>
+                              <td><?php echo $space_item['beljakovine']; ?></td>
+                            </tr>
+                            <tr>
+                              <td>Sol</td>
+                              <td><?php echo $space_item['sol']; ?></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <div class="d-flex">
+                            <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1" style="max-width: 3rem" />
+                            <button class="btn btn-outline-dark flex-shrink-0" type="button">
+                                <i class="bi-cart-fill me-1"></i>
+                                V košarico
+                            </button>
+
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-9 order-md-1">
-                        <img class="rounded-lg mx-auto d-block img-fluid" src="<?php echo base_url($space_item['pot_slika']);?>" width="100%" height="225" alt="...">
+            </div>
+        </section>
 
-                </div>
-        </div>
-        <hr class="featurette-divider">
-        <h2 class='text-justify display-5 fw-bold'>General information</h2>
-
-        <table class="table text-center">
-          <tbody>
-            <tr>
-              <td><?php echo "<h4 class='text-justify font-weight-bold'>BIO: </h4><h4 class='text-justify font-weight-bold text-primary'>".$space_item['BIO']."</h4>"; ?></td>
-              <td><?php echo "<h4 class='text-justify font-weight-bold'>cena: </h4><h4 class='text-justify font-weight-bold text-primary'>".$space_item['cena'].", ".$space_item['kj']."</h4>"; ?></td>
-              <td><?php echo "<h4 class='text-justify font-weight-bold'>Teza: </h4><h4 class='text-justify font-weight-bold text-primary'>".$space_item['teza_g']."</h4>"; ?></td>
-                </tr>
-
-                <tr>
-              <td><?php echo "<h4 class='text-justify font-weight-bold'>kcal: </h4><h4 class='text-justify font-weight-bold text-primary'>".$space_item['kcal']."</h4>"; ?></td>
-              <td><?php echo "<h4 class='text-justify font-weight-bold'>kj: </h4><h4 class='text-justify font-weight-bold text-primary'>".$space_item['kj'].", ".$space_item['kj']."</h4>"; ?></td>
-              <td><?php echo "<h4 class='text-justify font-weight-bold'>Mascobe: </h4><h4 class='text-justify font-weight-bold text-primary'>".$space_item['mascobe']."</h4>"; ?></td>
-                </tr>
-
-
-                <tr>
-              <td><?php echo "<h4 class='text-justify font-weight-bold'>Oglikovi hidrati: </h4><h4 class='text-justify font-weight-bold text-primary'>".$space_item['ogljikovi_hidrati']."</h4>"; ?></td>
-              <td><?php echo "<h4 class='text-justify font-weight-bold'>Beljakovine: </h4><h4 class='text-justify font-weight-bold text-primary'>".$space_item['beljakovine'].", ".$space_item['kj']."</h4>"; ?></td>
-              <td><?php echo "<h4 class='text-justify font-weight-bold'>Sol: </h4><h4 class='text-justify font-weight-bold text-primary'>".$space_item['sol']."</h4>"; ?></td>
-                </tr>
-</tbody>
-</table>
 
 
 
 <hr class="featurette-divider">
-<div class="container py-4">
-<h2 class='text-justify display-5 fw-bold'>Features</h2>
-<div class="row align-items-md-stretch">
-
-
-<div class="p-5 mb-4 bg-light rounded-3">
-      <div class="container-fluid py-5">
-        <h1 class="display-5 fw-bold">Description</h1>
-        <p class="col-md-8 fs-4"><?php echo $space_item['opis']; ?></p>
-      </div>
-    </div>
-
-
-<hr class="featurette-divider">
-<h2 class='text-justify display-5 fw-bold'>Rate this product</h2>
+<h2 class='text-justify display-5 fw-bold display-5 inline'>Oceni izdelek</h2>
 
 
 
@@ -88,7 +96,7 @@
 
                 <?php echo form_open('walmart/vote'); ?>
                 <input type="hidden" name="id_space" value=<?php echo $space_item['id']; ?>>
-                <div id = "div_vote_space">
+                <div id = "div_vote_space" class ="inline">
                         <div id="vote_space" class="btn-group" data-toggle="buttons">
                                 <label class="btn btn-default">
                                         <input <?php if($vote_ad['vrednost'] == "1"){ echo "checked"; } ?> id = "location_select_radio_i" type="radio" name="vote_space" value="1"/> 1
@@ -105,14 +113,14 @@
                                 <label class="btn btn-default">
                                         <input <?php if($vote_ad['vrednost'] == "5"){ echo "checked"; } ?> id = "location_select_radio_c" type="radio"  name="vote_space" value="5"/> 5
                                 </label>
-                        </div><input class="btn btn-primary" type="submit" name="submit" value="Vote" />
+                        </div><input class="btn btn-primary" type="submit" name="submit" value="Oceni" />
                 </div><br>
         </form>
         <?php
         if(isset($_SESSION['logged_in'])){
                $arr = $_SESSION['logged_in']; 
                if($vote_ad['id_u'] == $arr['id_u']){
-                        echo "<p class = 'comment_button d-inline btn btn-lg btn-outline-primary text-decoration-none'><a onclick=".'"return confirm(&quot Are you sure you want to delete?&quot);"'." href=".site_url('walmart/delete_vote/'.$vote_ad['id']).">Delete vote</a></p>";
+                        echo "<p class = 'comment_button d-inline btn btn-lg btn-outline-primary text-decoration-none'><a onclick=".'"return confirm(&quot Are you sure you want to delete?&quot);"'." href=".site_url('walmart/delete_vote/'.$vote_ad['id']).">Odstrani mojo oceno</a></p>";
                 }
         } 
 
