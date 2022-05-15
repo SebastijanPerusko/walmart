@@ -547,7 +547,7 @@
 					$num_comment = $this->news_model->delete_vote_num($slug);
 	                $this->news_model->delete_vote($slug);
 	                /*var_dump($data["news_item"]);*/
-	                $warning = "Your vote has been deleted.";
+	                $warning = "Vaša ocena je bila izbrisana.";
 
 	                $this->view($num_comment['id_o'], $warning);
 

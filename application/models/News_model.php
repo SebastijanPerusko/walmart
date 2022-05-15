@@ -175,7 +175,6 @@ class News_model extends CI_Model {
 			} else if(isset($_SESSION['rating_ad']) && $_SESSION['rating_ad'] == '3_greater'){
 				$query = $this->db->where("avg_oglas >=", 3.0);
 			} else if(isset($_SESSION['rating_ad']) && $_SESSION['rating_ad'] == '4_greater'){
-				echo "uhausdj";
 				$query = $this->db->where("avg_oglas >=", 4.0);
 			} else if(isset($_SESSION['rating_ad']) && $_SESSION['rating_ad'] == '5_greater'){
 				$query = $this->db->where("avg_oglas >=", 5.0);

@@ -99,7 +99,7 @@
 
                 <?php echo form_open('walmart/vote'); ?>
                 <input type="hidden" name="id_space" value=<?php echo $space_item['id']; ?>>
-                <div id = "div_vote_space" class ="">
+                <div id = "div_vote_space" class ="inline">
                         <div id="vote_space" class="btn-group" data-toggle="buttons">
                                 <label class="btn btn-default">
                                         <input <?php if($vote_ad['vrednost'] == "1"){ echo "checked"; } ?> id = "location_select_radio_i" type="radio" name="vote_space" value="1"/> 1

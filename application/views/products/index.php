@@ -21,6 +21,431 @@
 
 <div class="album py-2 bg-light">
   <div class="container">
+
+
+
+    <h6>Priporočeni izdelki</h6>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-md-4 row-cols-md-5 row-cols-md-6 row-cols-md-7 g-7">
+      
+            
+
+
+      
+        <div class="col p-1">
+          <a class="space_ad" href="https://www.studenti.famnit.upr.si/~89191059/walmart/index.php/walmart/view/1">
+          <div class="card shadow-sm border rounded">
+            <div class="container_image_index">
+              <img class="rounded-lg mx-auto d-block image_fit_index" src="https://www.studenti.famnit.upr.si/~89191059/walmart/uploads/banana.jpg" width="100%" height="225">
+              <!--<div class="text-over-image bottom-left_index rounded-pill"><h3 class="fw-bold">
+                
+<div style="border:1px solid #dd4814;padding-left:20px;margin:10px 0;">
+
+  <h4>A PHP Error was encountered</h4>
+
+  <p>Severity: Notice</p>
+  <p>Message:  Use of undefined constant php - assumed 'php'</p>
+  <p>Filename: products/index.php</p>
+  <p>Line Number: 42</p>
+
+  
+    <p>Backtrace:</p>
+    
+      
+    
+      
+    
+      
+        <p style="margin-left:10px">
+        File: /home/studenti/famnit/89191059/public_html/walmart/application/views/products/index.php<br />
+        Line: 42<br />
+        Function: _error_handler        </p>
+
+      
+    
+      
+    
+      
+    
+      
+        <p style="margin-left:10px">
+        File: /home/studenti/famnit/89191059/public_html/walmart/application/controllers/Walmart.php<br />
+        Line: 142<br />
+        Function: view        </p>
+
+      
+    
+      
+    
+      
+        <p style="margin-left:10px">
+        File: /home/studenti/famnit/89191059/public_html/walmart/index.php<br />
+        Line: 308<br />
+        Function: require_once        </p>
+
+      
+    
+  
+</div>
+</h3></div>-->
+              <div class="text-over-image bottom-right_index bg-danger"><h6 class="fw-bold text-light">4.05€ oz. 10000🝧</h6></div>
+              <div class="text-over-image top-right_index bg-transparent"><h6 class="fw-bold text-danger">Ocena uporabnikov: 2.0</h6></div>            </div>
+
+                      </div>
+          </a>
+        </div>
+        
+
+
+
+
+      
+        <div class="col p-1">
+          <a class="space_ad" href="https://www.studenti.famnit.upr.si/~89191059/walmart/index.php/walmart/view/6">
+          <div class="card shadow-sm border rounded">
+            <div class="container_image_index">
+              <img class="rounded-lg mx-auto d-block image_fit_index" src="https://www.studenti.famnit.upr.si/~89191059/walmart/uploads/sladoled.jpg" width="100%" height="225">
+              <!--<div class="text-over-image bottom-left_index rounded-pill"><h3 class="fw-bold">
+                
+<div style="border:1px solid #dd4814;padding-left:20px;margin:10px 0;">
+
+  <h4>A PHP Error was encountered</h4>
+
+  <p>Severity: Notice</p>
+  <p>Message:  Use of undefined constant php - assumed 'php'</p>
+  <p>Filename: products/index.php</p>
+  <p>Line Number: 42</p>
+
+  
+    <p>Backtrace:</p>
+    
+      
+    
+      
+    
+      
+        <p style="margin-left:10px">
+        File: /home/studenti/famnit/89191059/public_html/walmart/application/views/products/index.php<br />
+        Line: 42<br />
+        Function: _error_handler        </p>
+
+      
+    
+      
+    
+      
+    
+      
+        <p style="margin-left:10px">
+        File: /home/studenti/famnit/89191059/public_html/walmart/application/controllers/Walmart.php<br />
+        Line: 142<br />
+        Function: view        </p>
+
+      
+    
+      
+    
+      
+        <p style="margin-left:10px">
+        File: /home/studenti/famnit/89191059/public_html/walmart/index.php<br />
+        Line: 308<br />
+        Function: require_once        </p>
+
+      
+    
+  
+</div>
+</h3></div>-->
+              <div class="text-over-image bottom-right_index bg-danger"><h6 class="fw-bold text-light">0.99€ oz. 100🝧</h6></div>
+                          </div>
+
+                      </div>
+          </a>
+        </div>
+        
+
+
+
+
+      
+        <div class="col p-1">
+          <a class="space_ad" href="https://www.studenti.famnit.upr.si/~89191059/walmart/index.php/walmart/view/2">
+          <div class="card shadow-sm border rounded">
+            <div class="container_image_index">
+              <img class="rounded-lg mx-auto d-block image_fit_index" src="https://www.studenti.famnit.upr.si/~89191059/walmart/uploads/mleko.jpg" width="100%" height="225">
+              <!--<div class="text-over-image bottom-left_index rounded-pill"><h3 class="fw-bold">
+                
+<div style="border:1px solid #dd4814;padding-left:20px;margin:10px 0;">
+
+  <h4>A PHP Error was encountered</h4>
+
+  <p>Severity: Notice</p>
+  <p>Message:  Use of undefined constant php - assumed 'php'</p>
+  <p>Filename: products/index.php</p>
+  <p>Line Number: 42</p>
+
+  
+    <p>Backtrace:</p>
+    
+      
+    
+      
+    
+      
+        <p style="margin-left:10px">
+        File: /home/studenti/famnit/89191059/public_html/walmart/application/views/products/index.php<br />
+        Line: 42<br />
+        Function: _error_handler        </p>
+
+      
+    
+      
+    
+      
+    
+      
+        <p style="margin-left:10px">
+        File: /home/studenti/famnit/89191059/public_html/walmart/application/controllers/Walmart.php<br />
+        Line: 142<br />
+        Function: view        </p>
+
+      
+    
+      
+    
+      
+        <p style="margin-left:10px">
+        File: /home/studenti/famnit/89191059/public_html/walmart/index.php<br />
+        Line: 308<br />
+        Function: require_once        </p>
+
+      
+    
+  
+</div>
+</h3></div>-->
+              <div class="text-over-image bottom-right_index bg-danger"><h6 class="fw-bold text-light">1.51€ oz. 2000🝧</h6></div>
+              <div class="text-over-image top-right_index bg-transparent"><h6 class="fw-bold text-danger">Ocena uporabnikov: 4.0</h6></div>            </div>
+
+                      </div>
+          </a>
+        </div>
+        
+
+
+
+
+      
+        <div class="col p-1">
+          <a class="space_ad" href="https://www.studenti.famnit.upr.si/~89191059/walmart/index.php/walmart/view/9">
+          <div class="card shadow-sm border rounded">
+            <div class="container_image_index">
+              <img class="rounded-lg mx-auto d-block image_fit_index" src="https://www.studenti.famnit.upr.si/~89191059/walmart/uploads/gel_za_prhanje.jpg" width="100%" height="225">
+              <!--<div class="text-over-image bottom-left_index rounded-pill"><h3 class="fw-bold">
+                
+<div style="border:1px solid #dd4814;padding-left:20px;margin:10px 0;">
+
+  <h4>A PHP Error was encountered</h4>
+
+  <p>Severity: Notice</p>
+  <p>Message:  Use of undefined constant php - assumed 'php'</p>
+  <p>Filename: products/index.php</p>
+  <p>Line Number: 42</p>
+
+  
+    <p>Backtrace:</p>
+    
+      
+    
+      
+    
+      
+        <p style="margin-left:10px">
+        File: /home/studenti/famnit/89191059/public_html/walmart/application/views/products/index.php<br />
+        Line: 42<br />
+        Function: _error_handler        </p>
+
+      
+    
+      
+    
+      
+    
+      
+        <p style="margin-left:10px">
+        File: /home/studenti/famnit/89191059/public_html/walmart/application/controllers/Walmart.php<br />
+        Line: 142<br />
+        Function: view        </p>
+
+      
+    
+      
+    
+      
+        <p style="margin-left:10px">
+        File: /home/studenti/famnit/89191059/public_html/walmart/index.php<br />
+        Line: 308<br />
+        Function: require_once        </p>
+
+      
+    
+  
+</div>
+</h3></div>-->
+              <div class="text-over-image bottom-right_index bg-danger"><h6 class="fw-bold text-light">2.75€ oz. 10000🝧</h6></div>
+                          </div>
+
+                      </div>
+          </a>
+        </div>
+        
+
+
+
+
+      
+        <div class="col p-1">
+          <a class="space_ad" href="https://www.studenti.famnit.upr.si/~89191059/walmart/index.php/walmart/view/10">
+          <div class="card shadow-sm border rounded">
+            <div class="container_image_index">
+              <img class="rounded-lg mx-auto d-block image_fit_index" src="https://www.studenti.famnit.upr.si/~89191059/walmart/uploads/food_cat.jpg" width="100%" height="225">
+              <!--<div class="text-over-image bottom-left_index rounded-pill"><h3 class="fw-bold">
+                
+<div style="border:1px solid #dd4814;padding-left:20px;margin:10px 0;">
+
+  <h4>A PHP Error was encountered</h4>
+
+  <p>Severity: Notice</p>
+  <p>Message:  Use of undefined constant php - assumed 'php'</p>
+  <p>Filename: products/index.php</p>
+  <p>Line Number: 42</p>
+
+  
+    <p>Backtrace:</p>
+    
+      
+    
+      
+    
+      
+        <p style="margin-left:10px">
+        File: /home/studenti/famnit/89191059/public_html/walmart/application/views/products/index.php<br />
+        Line: 42<br />
+        Function: _error_handler        </p>
+
+      
+    
+      
+    
+      
+    
+      
+        <p style="margin-left:10px">
+        File: /home/studenti/famnit/89191059/public_html/walmart/application/controllers/Walmart.php<br />
+        Line: 142<br />
+        Function: view        </p>
+
+      
+    
+      
+    
+      
+        <p style="margin-left:10px">
+        File: /home/studenti/famnit/89191059/public_html/walmart/index.php<br />
+        Line: 308<br />
+        Function: require_once        </p>
+
+      
+    
+  
+</div>
+</h3></div>-->
+              <div class="text-over-image bottom-right_index bg-danger"><h6 class="fw-bold text-light">2.75€ oz. 10000🝧</h6></div>
+                          </div>
+
+                      </div>
+          </a>
+        </div>
+        
+
+
+
+
+      
+        <div class="col p-1">
+          <a class="space_ad" href="https://www.studenti.famnit.upr.si/~89191059/walmart/index.php/walmart/view/11">
+          <div class="card shadow-sm border rounded">
+            <div class="container_image_index">
+              <img class="rounded-lg mx-auto d-block image_fit_index" src="https://www.studenti.famnit.upr.si/~89191059/walmart/uploads/cebula.jpg" width="100%" height="225">
+              <!--<div class="text-over-image bottom-left_index rounded-pill"><h3 class="fw-bold">
+                
+<div style="border:1px solid #dd4814;padding-left:20px;margin:10px 0;">
+
+  <h4>A PHP Error was encountered</h4>
+
+  <p>Severity: Notice</p>
+  <p>Message:  Use of undefined constant php - assumed 'php'</p>
+  <p>Filename: products/index.php</p>
+  <p>Line Number: 42</p>
+
+  
+    <p>Backtrace:</p>
+    
+      
+    
+      
+    
+      
+        <p style="margin-left:10px">
+        File: /home/studenti/famnit/89191059/public_html/walmart/application/views/products/index.php<br />
+        Line: 42<br />
+        Function: _error_handler        </p>
+
+      
+    
+      
+    
+      
+    
+      
+        <p style="margin-left:10px">
+        File: /home/studenti/famnit/89191059/public_html/walmart/application/controllers/Walmart.php<br />
+        Line: 142<br />
+        Function: view        </p>
+
+      
+    
+      
+    
+      
+        <p style="margin-left:10px">
+        File: /home/studenti/famnit/89191059/public_html/walmart/index.php<br />
+        Line: 308<br />
+        Function: require_once        </p>
+
+      
+    
+  
+</div>
+</h3></div>-->
+              <div class="text-over-image bottom-right_index bg-danger"><h6 class="fw-bold text-light">2.75€ oz. 10000🝧</h6></div>
+                          </div>
+
+                      </div>
+          </a>
+        </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
     <div class="row">
 
         <div class="col-md-3">
@@ -75,10 +500,10 @@
           <li class="nav-item text-center index_padding_button">
             <select class="form-select border border-light" name="rating_order" aria-label="Default select example">
               <option <?php if(isset($_SESSION['rating_ad']) && $_SESSION['rating_ad'] == "rating_none"){ echo "selected"; } else if(!isset($_SESSION['rating_ad'])) { echo "selected";} ?> value="rating_none">Ocena: Brez</option>
-              <option <?php if(isset($_SESSION['rating_ad']) && $_SESSION['rating_ad'] == "1_greater"){ echo "selected"; } ?> value="1_greater">1 ali večja</option>
-              <option <?php if(isset($_SESSION['rating_ad']) && $_SESSION['rating_ad'] == "2_greater"){ echo "selected"; } ?> value="2_greater">2 ali večja</option>
-              <option <?php if(isset($_SESSION['rating_ad']) && $_SESSION['rating_ad'] == "3_greater"){ echo "selected"; } ?> value="3_greater">3 ali večja</option>
-              <option <?php if(isset($_SESSION['rating_ad']) && $_SESSION['rating_ad'] == "4_greater"){ echo "selected"; } ?> value="4_greater">4 ali večja</option>
+              <option <?php if(isset($_SESSION['rating_ad']) && $_SESSION['rating_ad'] == "1_greater"){ echo "selected"; } ?> value="1_greater">1 ali višja</option>
+              <option <?php if(isset($_SESSION['rating_ad']) && $_SESSION['rating_ad'] == "2_greater"){ echo "selected"; } ?> value="2_greater">2 ali višja</option>
+              <option <?php if(isset($_SESSION['rating_ad']) && $_SESSION['rating_ad'] == "3_greater"){ echo "selected"; } ?> value="3_greater">3 ali višja</option>
+              <option <?php if(isset($_SESSION['rating_ad']) && $_SESSION['rating_ad'] == "4_greater"){ echo "selected"; } ?> value="4_greater">4 ali višja</option>
               <option <?php if(isset($_SESSION['rating_ad']) && $_SESSION['rating_ad'] == "5_greater"){ echo "selected"; } ?> value="5_greater">5</option>
             </select>
           </li>
@@ -161,7 +586,7 @@
 
 
           <li class="nav-item index_padding_button">
-            <input id = "form_search_b" type="submit" class="btn btn-primary text-primary bg-light h-100 border border-warning" name="submit1" value="Išči" />
+            <input id = "form_search_b" type="submit" class="btn btn-primary text-primary bg-light h-100 border border-warning w-100" name="submit1" value="Išči" />
           </li>
         </ul>
 
