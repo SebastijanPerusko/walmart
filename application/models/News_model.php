@@ -34,8 +34,11 @@ class News_model extends CI_Model {
 				$data = array(
 			    	'id_i' => $elt,
 			        'id_u' => $arr['id_u'],
-			        'datum_ura' => $my_date_time
+			        'datum_ura' => $my_date_time,
+			        'znesek' => $this->input->post('cost')
 		    	);
+
+		    	print($data["znesek"]);
 
 		    	$this->db->insert('narocila', $data);
 		    }
@@ -44,7 +47,10 @@ class News_model extends CI_Model {
 
         public function find_cart_news($dataCart)
 		{
-			print("heege");
+
+
+
+
 			$query = $this->db->select('*')
 							->select('izdelek.id AS "id_ad_product"')
 	        				->from('izdelek');
@@ -54,7 +60,7 @@ class News_model extends CI_Model {
 	        	$query = $this->db->or_where('izdelek.id =', 10000000000);
 	        } else {
 	        	foreach($dataCart as $elt){
-		        	print($elt);
+		        	# print($elt);
 		        	$query = $this->db->or_where('izdelek.id =', intval($elt));
 		        }
 	        }
@@ -62,7 +68,7 @@ class News_model extends CI_Model {
 
 
 	        $query = $this->db->get();
-	       	print_r($this->db->last_query()); 
+	       	# print_r($this->db->last_query()); 
  
 
 

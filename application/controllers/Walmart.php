@@ -307,10 +307,10 @@
 
 
 	        	array_push($_SESSION['productsCart'],$this->input->post('id_space'));
-	        	foreach($_SESSION['productsCart'] as $col){
-	        		print($col);
-	        	}
-	        	print("uasodn");
+	        	# foreach($_SESSION['productsCart'] as $col){
+	        	# 	print($col);
+	        	# }
+	        	# print("uasodn");
 	        }
 
 

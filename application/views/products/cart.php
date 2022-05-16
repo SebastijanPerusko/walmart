@@ -29,19 +29,43 @@
         } ?>
 
 
+        <?php 
+            $finalPrice = 0;
+            $finalPriceV = 0;        ?>
+
+
+             <?php foreach ($space as $space_item): 
+
+
+              
+                $finalPrice+=$space_item['cena']; 
+                $finalPriceV += $space_item['cena_tocke'];
+
+
+
+              ?>
+
+
+
+
+        <?php endforeach; ?>
+
+
+
+
+
+
         <div class="card card-header-actions mb-4">
         <div class="card-header">
             Naroči izdelke
             <?php echo form_open('walmart/cartOrder'); ?>
+                <input type="hidden" name="cost" value=<?php echo $finalPrice; ?>>
                 <input class = 'btn btn-sm btn-primary' type="submit" name="order" value="Naroči izdelke" />
             </form>
         </div>
         <div class="card-body px-0">
             <!-- Payment method 1-->
-            <?php 
-            $finalPrice = 0;
-            $finalPriceV = 0;
-            ?>
+            
 
 
             <?php foreach ($space as $space_item): ?>

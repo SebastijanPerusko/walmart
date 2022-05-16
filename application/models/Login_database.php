@@ -89,6 +89,19 @@ class Login_database extends CI_model {
 	        return $query->result_array();
         }
 
+
+    public function get_user_orders($num)
+		{
+
+	        $query = $this->db->select('*')
+	        				->select('narocila.id AS "id_nar"')
+	        				->from('narocila')
+	        				->join('uporabnik', 'uporabnik.id = narocila.id_u')
+	        				->where('narocila.id_u', $num)
+	        				->get();
+	        return $query->result_array();
+        }
+
         public function get_other_reservation($num)
 		{
 

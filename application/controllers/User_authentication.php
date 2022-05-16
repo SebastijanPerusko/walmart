@@ -92,15 +92,16 @@ public function profile(){
         $this->load->view('templates/footer');
         return;
     }
+        $data['username'] = $this->session->userdata['logged_in']['username'];
+        $data['email'] = $this->session->userdata['logged_in']['email'];
+        $data['id_u'] = $this->session->userdata['logged_in']['id_u'];
+        $data['space'] = $this->login_database->get_user_orders($data['id_u']);
 
-    $data['username'] = $this->session->userdata['logged_in']['username'];
-    $data['email'] = $this->session->userdata['logged_in']['email'];
-    $data['id_u'] = $this->session->userdata['logged_in']['id_u'];
 
 
-    $this->load->view('templates/header');
-    $this->load->view('user_authentication/admin_page', $data);
-    $this->load->view('templates/footer');
+        $this->load->view('templates/header');
+        $this->load->view('user_authentication/admin_page', $data);
+        $this->load->view('templates/footer');
 
 
 

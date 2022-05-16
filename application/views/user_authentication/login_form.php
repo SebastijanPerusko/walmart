@@ -7,16 +7,16 @@
     <p class = "text-success"><?php if (isset($message_display)) { echo $message_display; } ?></p>
     <p class = "text-success"><?php if (isset($logout_message)) { echo $logout_message; } ?></p>
     <p class = "text-danger"><?php if (isset($error_message)) { echo $error_message; } ?></p>
-    <h1 class="mb-3 h3 fw-normal text-light">Sign in</h1><hr/>
-    <h3 class="mb-5 h5 fw-normal text-light">To explore the immense world of Walmart</h3>
+    <h1 class="mb-3 h3 fw-normal text-light">Prijavite se</h1><hr/>
+    <h3 class="mb-5 h5 fw-normal text-light">Raziskovanje ogromnega sveta Walmarta</h3>
     <div class="form-floating mb-1">
       <input class = "form-control" type="text" name="username" id="name" placeholder="Example">
-      <label for="floatingInput">Username</label>
+      <label for="floatingInput">Uporabnisko ime</label>
     </div>
 
     <div class="form-floating">
       <input class = "form-control" type="password" name="password" id="password" placeholder="**********">
-      <label for="floatingPassword">Password</label>
+      <label for="floatingPassword">Geslo</label>
     </div>
 
     <div class="checkbox mb-3">
