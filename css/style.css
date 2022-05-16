@@ -1,3 +1,26 @@
+/*FOOTER*/
+
+.border-bottom {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.fst-row {
+    padding: 20px 0;
+    color: white;
+    font-size: 20px;
+}
+
+.snd-row {
+    padding: 20px 0 30px;
+    color: #dcebff;
+}
+
+.item-link {
+    color: #dcebff;
+}
+
+/*OTHER*/
+
 #main{
     width:960px;
     margin:50px auto;

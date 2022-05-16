@@ -1,6 +1,3 @@
-
-
-
 <div class = "container_log_in text-center"> 
 <main class="signin_from_main border bg-primary rounded-3">
   
