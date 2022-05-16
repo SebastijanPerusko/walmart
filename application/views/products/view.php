@@ -60,11 +60,27 @@
                           </tbody>
                         </table>
                         <div class="d-flex">
-                            <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1" style="max-width: 3rem" />
+                            <!--<input class="form-control text-center me-3" id="inputQuantity" type="num" value="1" style="max-width: 3rem" />
                             <button class="btn btn-outline-dark flex-shrink-0" type="button">
                                 <i class="bi-cart-fill me-1"></i>
                                 V košarico
-                            </button>
+                            </button>-->
+
+                            <?php echo form_open('walmart/addToCart'); ?>
+                            <input type="hidden" name="id_space" value=<?php echo $space_item['id']; ?>>
+                            <input class = 'btn btn-outline-dark flex-shrink-0' type="submit" name="cart" value="V košarico" />
+                            </form>
+
+                            <?php 
+                                if(in_array($space_item['id'], $_SESSION['productsCart'])){?>
+                                    <?php echo form_open('walmart/removeFromCart'); ?>
+                                    <input type="hidden" name="id_space" value=<?php echo $space_item['id']; ?>>
+                                    <input class = 'btn btn-outline-dark flex-shrink-0' type="submit" name="cartRemove" value="Odstrani iz košarice" />
+                                    </form>
+                                <?php }
+
+
+                            ?>
 
                         </div>
                     </div>

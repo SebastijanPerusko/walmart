@@ -33,12 +33,11 @@
       <li class="nav-item">
         <a class="nav-link active text-light border-end fw-bold rounded m-1" aria-current="page" href="<?php echo site_url('walmart/index'); ?>"><h2><i class="bi bi-house"></i></h2></i></a>
       </li>
-      <?php 
-      /*if(isset($_SESSION['logged_in'])){
-        $add_log = site_url('walmart/create');
-        echo '<li class="nav-item"><a class="nav-link active text-light fw-bold border border-light rounded m-1" aria-current="page" href="'.$add_log.'">List your space</a></li>';
-      }*/
-      ?>
+
+
+      <li class="nav-item">
+        <a class="nav-link active text-light border-end fw-bold rounded m-1" aria-current="page" href="<?php echo site_url('walmart/cart'); ?>"><h2><i class="bi bi-cart-dash"></i></h2></i></a>
+      </li>
 
       <?php 
       if(isset($_SESSION['logged_in'])){

@@ -262,12 +262,242 @@
 	                $data['vote_ad_avg'] = $this->news_model->get_avg_vote($num, NULL);
 	                $data['warning'] = $warning;
 
+	                if (!isset($_SESSION['productsCart'])) {
+	                	$_SESSION['productsCart'] = array();
+	                }
+
 	                /*var_dump($data["news_item"]);*/
 	                $this->load->view('templates/header', $data);
 	                /*var_dump($data["news"]);*/
 	                $this->load->view('products/view', $data);
 	                $this->load->view('templates/footer');
 	        }
+
+
+	        public function addToCart($num = NULL, $warning = NULL) {
+
+				$this->load->helper('form');
+			    $this->load->library('form_validation');
+
+
+			    $this->form_validation->set_rules('cart', 'cart', 'required');
+
+
+			    if ($this->form_validation->run() === FALSE)
+			    {
+			        $this->load->view('templates/header', $data);
+			        $this->load->view('products/view');
+			        $this->load->view('templates/footer');
+
+			    }
+			    else
+			    {
+			        # $lastAdded = $this->news_model->set_comment();
+			        $data['space_item'] = $this->news_model->get_news($this->input->post('id_space'), NULL);
+	                $data['comment'] = $this->news_model->get_comment($this->input->post('id_space'), NULL);
+	                $data['vote_ad'] = $this->news_model->get_vote($this->input->post('id_space'), NULL);
+	                $data['vote_ad_avg'] = $this->news_model->get_avg_vote($this->input->post('id_space'), NULL);
+	                $data["opis"] = "News";
+	                /*var_dump($data["news_item"]);*/
+	                $this->load->view('templates/header', $data);
+	                /*var_dump($data["news"]);*/
+	                $this->load->view('products/view', $data);
+	                $this->load->view('templates/footer');
+			    }
+
+
+	        	array_push($_SESSION['productsCart'],$this->input->post('id_space'));
+	        	foreach($_SESSION['productsCart'] as $col){
+	        		print($col);
+	        	}
+	        	print("uasodn");
+	        }
+
+
+
+	        public function removeFromCart($num = NULL, $warning = NULL) {
+
+				$this->load->helper('form');
+			    $this->load->library('form_validation');
+
+
+			    $this->form_validation->set_rules('cartRemove', 'cartRemove', 'required');
+
+
+			    if ($this->form_validation->run() === FALSE)
+			    {
+			        $this->load->view('templates/header', $data);
+			        $this->load->view('products/view');
+			        $this->load->view('templates/footer');
+
+			    }
+			    else
+			    {
+			        # $lastAdded = $this->news_model->set_comment();
+			        $data['space_item'] = $this->news_model->get_news($this->input->post('id_space'), NULL);
+	                $data['comment'] = $this->news_model->get_comment($this->input->post('id_space'), NULL);
+	                $data['vote_ad'] = $this->news_model->get_vote($this->input->post('id_space'), NULL);
+	                $data['vote_ad_avg'] = $this->news_model->get_avg_vote($this->input->post('id_space'), NULL);
+	                $data["opis"] = "News";
+	                /*var_dump($data["news_item"]);*/
+	                $this->load->view('templates/header', $data);
+	                /*var_dump($data["news"]);*/
+	                $this->load->view('products/view', $data);
+	                $this->load->view('templates/footer');
+			    }
+
+			    unset($_SESSION['productsCart'][$this->input->post('id_space')]);
+
+
+			    $emptyArray = [];
+			    foreach($_SESSION['productsCart'] as $col){
+			    	if($col != $this->input->post('id_space')){
+			    		array_push($emptyArray,$col);
+			    	}
+	        	}
+	        	$_SESSION['productsCart'] = [];
+	        	$_SESSION['productsCart'] = $emptyArray;
+
+	        }
+
+
+	        public function cart()
+	        {
+	                 $this->load->helper('form');
+			    	$this->load->library('form_validation');
+			    	
+			    	# $this->form_validation->set_rules('type_storage', 'type_storage', 'required');
+			    	# $this->form_validation->set_rules('size_storage', 'size_storage', 'required');
+			    	$this->form_validation->set_rules('order', 'order', 'required');
+
+
+	                if ($this->form_validation->run() === FALSE)
+				    {
+
+
+				    	$data['space'] = $this->news_model->find_cart_news($_SESSION['productsCart']);
+
+
+		                /*$data["title"] = "News";*/
+		                $this->load->view('templates/header', $data);
+		                /*var_dump($data["news"]);*/
+		                $this->load->view('products/cart', $data);
+		                $this->load->view('templates/footer');
+
+				    }
+				    else
+				    {
+				       	$data['space'] = $this->news_model->find_cart_news($_SESSION['productsCart']);
+
+
+		                /*var_dump($data["news_item"]);*/
+		                $this->load->view('templates/header', $data);
+		                /*var_dump($data["news"]);*/
+		                $this->load->view('products/cartOrder', $data);
+		                $this->load->view('templates/footer');
+				    }
+
+	                
+	        }
+
+
+
+
+	        public function removeCart()
+	        {
+	                 $this->load->helper('form');
+			    	$this->load->library('form_validation');
+			    	
+			    	# $this->form_validation->set_rules('type_storage', 'type_storage', 'required');
+			    	# $this->form_validation->set_rules('size_storage', 'size_storage', 'required');
+			    	$this->form_validation->set_rules('order', 'order', 'required');
+
+
+	                if ($this->form_validation->run() === FALSE)
+				    {
+
+
+				    	$data['space'] = $this->news_model->find_cart_news($_SESSION['productsCart']);
+
+
+		                /*$data["title"] = "News";*/
+		                $this->load->view('templates/header', $data);
+		                /*var_dump($data["news"]);*/
+		                $this->load->view('products/cart', $data);
+		                $this->load->view('templates/footer');
+
+				    }
+				    else
+				    {
+				       	$data['space'] = $this->news_model->find_cart_news($_SESSION['productsCart']);
+
+
+		                /*var_dump($data["news_item"]);*/
+		                $this->load->view('templates/header', $data);
+		                /*var_dump($data["news"]);*/
+		                $this->load->view('products/cartOrder', $data);
+		                $this->load->view('templates/footer');
+				    }
+
+	                
+	        }
+
+	        public function cartOrder(){
+	        	if(!isset($this->session->userdata['logged_in'])){
+					$data['message_display'] = 'Signin to view this page!';
+				    $this->load->view('templates/header');
+				    $this->load->view('user_authentication/login_form', $data);
+				    $this->load->view('templates/footer');
+				    return;
+				}
+
+				$this->load->helper('form');
+			    $this->load->library('form_validation');
+
+
+			    $this->form_validation->set_rules('order', 'order', 'required');
+
+
+			    if ($this->form_validation->run() === FALSE)
+			    {
+			        $this->load->view('templates/header', $data);
+			        $this->load->view('products/cart');
+			        $this->load->view('templates/footer');
+
+			    }
+			    else
+			    {
+			        $lastAdded = $this->news_model->set_order($_SESSION['productsCart']);
+			        $data['warning'] = "Naročilo je bilo uspešno naročeno.";
+			        $_SESSION['productsCart'] = [];
+			        $data['space'] = $this->news_model->find_cart_news($_SESSION['productsCart']);
+
+
+
+
+			        /*$data['space_item'] = $this->news_model->get_news($this->input->post('id_space'), NULL);
+	                $data['comment'] = $this->news_model->get_comment($this->input->post('id_space'), NULL);
+	                $data['vote_ad'] = $this->news_model->get_vote($this->input->post('id_space'), NULL);
+	                $data['vote_ad_avg'] = $this->news_model->get_avg_vote($this->input->post('id_space'), NULL);
+	                $data["opis"] = "News";*/
+	                /*var_dump($data["news_item"]);*/
+	                $this->load->view('templates/header', $data);
+	                /*var_dump($data["news"]);*/
+	                $this->load->view('products/cart', $data);
+	                $this->load->view('templates/footer');
+			    }
+
+
+	        }
+
+
+
+
+
+
+
+
+
 
 	        public function create()
 			{

@@ -22,6 +22,68 @@ class News_model extends CI_Model {
 		    $this->db->insert('komentar', $data);
         }
 
+
+        public function set_order($dataOrder)
+		{
+			$this->load->helper('url');
+			$my_date_time = date('Y-m-d H:i:s');
+			$arr = $_SESSION['logged_in'];
+
+
+			foreach($dataOrder as $elt){
+				$data = array(
+			    	'id_i' => $elt,
+			        'id_u' => $arr['id_u'],
+			        'datum_ura' => $my_date_time
+		    	);
+
+		    	$this->db->insert('narocila', $data);
+		    }
+        }
+
+
+        public function find_cart_news($dataCart)
+		{
+			print("heege");
+			$query = $this->db->select('*')
+							->select('izdelek.id AS "id_ad_product"')
+	        				->from('izdelek');
+
+
+	        if(empty($dataCart)){
+	        	$query = $this->db->or_where('izdelek.id =', 10000000000);
+	        } else {
+	        	foreach($dataCart as $elt){
+		        	print($elt);
+		        	$query = $this->db->or_where('izdelek.id =', intval($elt));
+		        }
+	        }
+		        
+
+
+	        $query = $this->db->get();
+	       	print_r($this->db->last_query()); 
+ 
+
+
+	        return $query->result_array();
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         public function set_vote($slug = FALSE)
 		{
 			$this->load->helper('url');
