@@ -26,6 +26,12 @@
 
 	                if ($this->form_validation->run() === FALSE)
 				    {
+
+				    	if (!isset($_SESSION['productsCart'])) {
+	                		$_SESSION['productsCart'] = array();
+	                	}
+
+
 				    	if($num_page == NULL){
 				    		$data['space'] = $this->news_model->find_group_news(1);
 				    	} else {
@@ -61,6 +67,10 @@
 				        $_SESSION['price_end'] = $this->input->post('end_price');
 				        $_SESSION['order_ad'] = $this->input->post('order_by');
 				        $_SESSION['rating_ad'] = $this->input->post('rating_order');
+
+				        if (!isset($_SESSION['productsCart'])) {
+	                		$_SESSION['productsCart'] = array();
+	                	}
 
 
 
@@ -285,6 +295,10 @@
 
 			    if ($this->form_validation->run() === FALSE)
 			    {
+			    	if (!isset($_SESSION['productsCart'])) {
+	                		$_SESSION['productsCart'] = array();
+	                	}
+
 			        $this->load->view('templates/header', $data);
 			        $this->load->view('products/view');
 			        $this->load->view('templates/footer');
@@ -292,6 +306,10 @@
 			    }
 			    else
 			    {
+			    	if (!isset($_SESSION['productsCart'])) {
+	                		$_SESSION['productsCart'] = array();
+	                	}
+
 			        # $lastAdded = $this->news_model->set_comment();
 			        $data['space_item'] = $this->news_model->get_news($this->input->post('id_space'), NULL);
 	                $data['comment'] = $this->news_model->get_comment($this->input->post('id_space'), NULL);
@@ -369,6 +387,10 @@
 			    	# $this->form_validation->set_rules('type_storage', 'type_storage', 'required');
 			    	# $this->form_validation->set_rules('size_storage', 'size_storage', 'required');
 			    	$this->form_validation->set_rules('order', 'order', 'required');
+
+			    	if (!isset($_SESSION['productsCart'])) {
+                            $_SESSION['productsCart'] = array();
+                	}
 
 
 	                if ($this->form_validation->run() === FALSE)

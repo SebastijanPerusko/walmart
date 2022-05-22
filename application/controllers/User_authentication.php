@@ -152,6 +152,10 @@ public function profile(){
                 $data['username'] = $this->session->userdata['logged_in']['username'];
                 $data['email'] = $this->session->userdata['logged_in']['email'];
                 $data['id_u'] = $this->session->userdata['logged_in']['id_u'];
+                $data['space'] = $this->login_database->get_user_orders($data['id_u']);
+                if (!isset($_SESSION['productsCart'])) {
+                            $_SESSION['productsCart'] = array();
+                }
 
 
                 $this->load->view('templates/header');
