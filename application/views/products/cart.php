@@ -15,12 +15,8 @@
     ?>
     <?php endforeach; ?>
     <div class="card card-header-actions mb-4">
-        <div class="card-header">
-            Naroči izdelke
-            <?php echo form_open('walmart/cartOrder'); ?>
-                <input type="hidden" name="cost" value=<?php echo $finalPrice; ?>>
-                    <input class = 'btn btn-sm btn-primary' type="submit" name="order" value="Naroči izdelke" />
-                </form>
+        <div class="card-header cart-header">
+            <h3 class="cart-title">KOŠARICA</h3>
         </div>
         <div class="card-body px-0">
             
@@ -45,8 +41,12 @@
             <hr>
         <?php endforeach; ?>
         </div>
-        <div class="card-header">
-            Končna cena:<?php echo " ".$finalPrice."&euro; oz. ".$finalPriceV."&#128871;";?>
+        <div class="card-header card-bottom">
+            <span class="price-tag"><?php echo " ".$finalPrice."&euro; oz. ".$finalPriceV."&#128871;";?></span>
+            <?php echo form_open('walmart/cartOrder'); ?>
+                <input type="hidden" name="cost" value=<?php echo $finalPrice; ?>>
+                    <input class = 'btn btn-primary' type="submit" name="order" value="Naroči izdelke" />
+            </form>
         </div>
     </div>
 </div>

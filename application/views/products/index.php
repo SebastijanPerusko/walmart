@@ -3,99 +3,112 @@
   <div class="album">
 
     <!--PRIPOROČENI IZDELKI-->
-    <div class = "row">
+    <div class = "row ">
       <div class = "col-12">
         <h6 class="recommended-text">Priporočeni izdelki</h6>
       </div>
     </div>
-    <div class="row">
+    <div class="row ">
         
       <div class="col-lg-2 col-md-4"> 
+      <div class="product-box-2 shadow-sm">
         <a class="" href="https://www.studenti.famnit.upr.si/~89191059/walmart/index.php/walmart/view/1">
           <div class="card">
             <div class="container_image_index">
               <img class="" src="https://www.studenti.famnit.upr.si/~89191059/walmart/uploads/banana.jpg" width="100%" height="225">
-              <div class="price">
-                <h6 class="price-text">4.05€ oz. 10000🝧</h6>
+              <div class="price-tag product-tag">
+                <h6 class="">4.05€ oz. 10000🝧</h6>
               </div>
-              <div class="">
-                <h6 class="">Ocena uporabnikov: 2.0</h6>
+              <div class="grade-div">
+                <h6 class="grade">Ocena uporabnikov: 2.0</h6>
               </div>            
             </div>
           </div>
         </a>
+</div>
       </div>
 
       <div class="col-lg-2 col-md-4">
+      <div class="product-box-2 shadow-sm">
         <a class="" href="https://www.studenti.famnit.upr.si/~89191059/walmart/index.php/walmart/view/6">
           <div class="card">
             <div class="container_image_index">
               <img class="" src="https://www.studenti.famnit.upr.si/~89191059/walmart/uploads/sladoled.jpg" width="100%" height="225">        
               <div class="">
-                <h6 class="">0.99€ oz. 100🝧</h6>
+                <h6 class="price-tag product-tag">0.99€ oz. 100🝧</h6>
               </div>
             </div>
           </div>
         </a>
       </div>
+</div>
+
 
       <div class="col-lg-2 col-md-4">
+      <div class="product-box-2 shadow-sm">
         <a class="" href="https://www.studenti.famnit.upr.si/~89191059/walmart/index.php/walmart/view/2">
           <div class="card">
             <div class="container_image_index">
               <img class="" src="https://www.studenti.famnit.upr.si/~89191059/walmart/uploads/mleko.jpg" width="100%" height="225">
               <div class="">
-                <h6 class="">1.51€ oz. 2000🝧</h6>
+                <h6 class="price-tag product-tag">1.51€ oz. 2000🝧</h6>
               </div>
-              <div class="">
-                <h6 class="">Ocena uporabnikov: 4.0</h6>
+              <div class="grade-div">
+                <h6 class="grade">Ocena uporabnikov: 4.0</h6>
               </div>            
             </div>
           </div>
         </a>
       </div>
+</div>
 
-      <div class="col-lg-2 col-md-4 lower-row">
+      <div class="col-lg-2 col-md-4">
+      <div class="product-box-2 shadow-sm">
         <a class="" href="https://www.studenti.famnit.upr.si/~89191059/walmart/index.php/walmart/view/9">
           <div class="card">
             <div class="container_image_index">
               <img class="" src="https://www.studenti.famnit.upr.si/~89191059/walmart/uploads/gel_za_prhanje.jpg" width="100%" height="225">  
-              <div class="">
+              <div class="price-tag product-tag">
                 <h6 class="">2.75€ oz. 10000🝧</h6>
               </div>
             </div>
           </div>
         </a>
       </div>
+</div>
 
-      <div class="col-lg-2 col-md-4 lower-row">
+      <div class="col-lg-2 col-md-4">
+      <div class="product-box-2 shadow-sm">
         <a class="" href="https://www.studenti.famnit.upr.si/~89191059/walmart/index.php/walmart/view/10">
           <div class="card">
             <div class="container_image_index">
               <img class="" src="https://www.studenti.famnit.upr.si/~89191059/walmart/uploads/food_cat.jpg" width="100%" height="225">
-              <div class="">
+              <div class="price-tag product-tag">
                 <h6 class="">2.75€ oz. 10000🝧</h6>
               </div>
             </div>
           </div>
         </a>
       </div>
+</div>
         
-      <div class="col-lg-2 col-md-4 lower-row">
+      <div class="col-lg-2 col-md-4">
+      <div class="product-box-2 shadow-sm">
         <a class="" href="https://www.studenti.famnit.upr.si/~89191059/walmart/index.php/walmart/view/11">
           <div class="card">
             <div class="container_image_index">
               <img class="" src="https://www.studenti.famnit.upr.si/~89191059/walmart/uploads/cebula.jpg" width="100%" height="225">
-              <div class="">
+              <div class="price-tag product-tag">
                 <h6 class="">2.75€ oz. 10000🝧</h6>
               </div>
             </div>
           </div>
         </a>
       </div>
-
+</div>
+    <div class="col yellow-border-bottom-recommended">
     </div>
-    <hr>
+</div>
 
      <!--FILTRIRANJE-->
     <div class="row">
@@ -211,7 +224,7 @@
         <hr>
         <div class="dropdown">
           <a href="#">
-            <h1><i class="bi bi-caret-up-square-fill bg-light"></i></h1>
+            <h1><i class="bi bi-caret-up-square-fill"></i></h1>
           </a>
         </div>
       </div>
@@ -219,25 +232,28 @@
 <div class="col-md-9">
 <?php $num_iteration = 0;?>
 
-<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-md-4 g-4">
+<div class="row">
 <?php foreach ($space as $space_item): ?>
-        <div class="col p-1">
+        <div class="col-lg-3 col-md-4 col-xs-6">
+          <div class="product-box shadow-sm">
           <a class = "space_ad" href="<?php echo site_url('walmart/view/'.$space_item['id_ad_product']); ?>">
-          <div class="card shadow-sm border rounded">
-            <div class="container_image_index">
+            <div class="container_image_index img-edit">
               <img class="rounded-lg mx-auto d-block image_fit_index" src="<?php echo base_url($space_item['pot_slika']);?>" width="100%" height="225">
-              <div class="text-over-image bottom-right_index bg-danger"><h6 class="fw-bold text-light"><?php echo $space_item['cena']."&euro; oz. ".$space_item['cena_tocke']."&#128871;"; ?></h6></div>
+              <div class="price-tag product-tag">
+                <h6 class=""><?php echo $space_item['cena']."&euro; oz. ".$space_item['cena_tocke']."&#128871;"; ?></h6>
+              </div>
+              <div class="product-desc">
+                <p class="prod-desc"><?php echo $space_item['ime']." - ".($space_item['teza_g']/1000)."kg"; ?></p>
+              </div>
+              <div>
               <?php if($space_item['avg_oglas'] != ''){
-                echo "<div class='text-over-image top-right_index bg-transparent'><h6 class='fw-bold text-danger'>Ocena uporabnikov: ".substr($space_item['avg_oglas'], 0, 3)."</h6></div>";
-                }
-                ?>
+                  echo "<div class='grade-div'><h6 class='grade'>Ocena uporabnikov: ".substr($space_item['avg_oglas'], 0, 3)."</h6></div>";
+                  }
+                  ?>
+              </div>
             </div>
-            <div class="card-body bg-primary">
-              <p class="card-text text-index-white font-weight-bold fw-bold" style='height: 65px;'><?php echo $space_item['ime']." - ".($space_item['teza_g']/1000)."kg"; ?></p>
-              
-            </div>
-          </div>
           </a>
+          </div>
         </div>
 
 

@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" type="text/css">
 
 </head>
-<body class = "bg-light">
+<body class = "bg-light d-flex flex-column min-vh-100">
   <nav aria-label="Eighth navbar example" class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container">
       <img src='<?php echo base_url("/uploads/walmartLogo.svg");?>' height = "35" class="mw-10" alt="Responsive image">
@@ -25,7 +25,7 @@
     </form>-->
     <!--border border-light-->
 
-    <ul class="navbar-nav">
+    <ul class="navbar-nav nav-icons">
       <li class="nav-item">
         <a class="nav-link m-1" aria-current="page" href="<?php echo site_url('walmart/index'); ?>"><h2><i class="bi bi-house"></i></h2></i></a>
       </li>

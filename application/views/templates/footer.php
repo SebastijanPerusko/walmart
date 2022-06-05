@@ -1,4 +1,4 @@
-<footer class="footer bg-primary">
+<footer class="footer bg-primary mt-auto">
   <section class="border-bottom">
     <div class="container">
       <!-- Top Left -->
