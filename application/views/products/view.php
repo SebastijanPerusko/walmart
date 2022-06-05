@@ -67,7 +67,7 @@
                                 if(in_array($space_item['id'], $_SESSION['productsCart'])){?>
                                         <?php echo form_open('walmart/removeFromCart'); ?>
                                         <input type="hidden" name="id_space" value=<?php echo $space_item['id']; ?>>
-                                        <input class = 'btn btn-outline-dark flex-shrink-0' type="submit" name="cartRemove" value="Odstrani iz košarice" />
+                                        <input class = 'btn btn-outline-dark flex-shrink-0 btn-custom' type="submit" name="cartRemove" value="Odstrani iz košarice" />
                                         </form>
                                 <?php }
                                 ?>
